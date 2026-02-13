@@ -56,9 +56,9 @@ The prompt provides TARGET KEYWORDS. These are exact phrases people search on Go
 3. NEVER link to Lemon.io competitors (Toptal, Upwork, Fiverr, Arc, Turing, etc.)
 4. Format all links as standard markdown: [anchor text](URL)
 
-## CLEARSCOPE SEO TERMS (MANDATORY)
+## CLEARSCOPE SEO TERMS (MANDATORY — 90%+ IS A MUST)
 
-- The user prompt includes a list of Clearscope terms with importance levels. You MUST achieve 90%+ coverage: include the primary term OR any of its variants naturally in the article. HIGH importance terms are non-negotiable; include as many MEDIUM and LOWER terms as fit naturally. Articles that miss Clearscope terms fail validation.
+- The user prompt includes a list of Clearscope terms. You MUST use 90%+ of these terms in the article — this is a hard requirement, not a suggestion. Include the primary term OR any of its variants naturally. HIGH importance terms are non-negotiable; add MEDIUM and LOWER until you reach 90%+ coverage. Articles below 90% fail validation and are rejected.
 
 ## CONTENT QUALITY
 
@@ -166,16 +166,16 @@ def _build_clearscope_section(clearscope_terms: list[dict]) -> str:
     low_lines = "\n".join(f"  - {_fmt_term(t)}" for t in low[:30])
 
     return f"""
-## CLEARSCOPE SEO TERMS (CRITICAL — 90%+ coverage required; articles below 90% fail validation)
-You MUST include 90%+ of the terms below. Use the primary term OR any of its listed variants. The [use Nx] indicates how many times each term should appear. Do not skip HIGH importance terms; add MEDIUM and LOWER where they fit naturally.
+## CLEARSCOPE SEO TERMS (MANDATORY — YOU MUST USE 90%+ OF THESE TERMS)
+This is a hard requirement: at least 90% of the terms below must appear in your article (primary term OR any listed variant). Articles that do not reach 90% coverage fail validation. Use the [use Nx] guidance for how often each term should appear. Prioritize: include ALL HIGH, then as many MEDIUM and LOWER as needed to reach 90%+.
 
 HIGH IMPORTANCE (you MUST include ALL of these):
 {high_lines}
 
-MEDIUM IMPORTANCE (include as MANY as possible):
+MEDIUM IMPORTANCE (include as many as needed to reach 90%+):
 {medium_lines}
 
-LOWER IMPORTANCE (include where natural — every extra term improves the SEO grade):
+LOWER IMPORTANCE (include where natural — every term counts toward the 90% target):
 {low_lines}
 """
 
@@ -196,9 +196,6 @@ Example: "The best way to find {tech} programmers is through a vetted marketplac
 
 def _build_header_section(h2_headers: list[str], h3_headers: list[str]) -> str:
     h2_lines = chr(10).join(f"  {i+1}. {h}" for i, h in enumerate(h2_headers))
-    h3_lines = (
-        chr(10).join(f"  - {h}" for h in h3_headers) if h3_headers else "  (none)"
-    )
 
     return f"""
 ## ARTICLE STRUCTURE (STRICT — do not add or remove H2 sections)
@@ -206,8 +203,7 @@ Your article MUST use EXACTLY these {len(h2_headers)} sections as H2 (##) header
 
 {h2_lines}
 
-You may add H3 (###) subsections within any H2 section. Use these optional templates for H3s where they fit:
-{h3_lines}
+You may add H3 (###) subsections within any H2 section where they improve structure. Create your own subheader text — do not use a fixed list. At least 2-3 H2 sections should contain H3s.
 
 CRITICAL: Do NOT create additional H2 sections beyond the {len(h2_headers)} listed above. Each H2 section should be roughly 300-400 words to hit the ~3000 word target.
 """
@@ -297,7 +293,7 @@ def _build_requirements(tech: str) -> str:
 - DO NOT link to any developer hiring platforms that compete with Lemon.io
 - Write in a professional but approachable tone
 - Every claim about the technology should be accurate and current
-- Achieve 90%+ Clearscope term coverage: include HIGH importance terms and as many MEDIUM/LOWER terms as fit naturally"""
+- You MUST use 90%+ of the Clearscope terms listed above — this is non-negotiable. Include all HIGH, then add MEDIUM and LOWER until coverage is 90%+."""
 
 
 def _build_self_check() -> str:
@@ -311,7 +307,7 @@ Before outputting the article, mentally verify:
 5. At least 2 internal Lemon.io links are included (using short anchors)
 6. At least 2 external links are included (use the suggested official URLs — do not skip)
 7. At least 2 case studies or testimonials are woven into the body
-8. 90%+ of Clearscope terms (or their variants) appear — all HIGH, most MEDIUM, and LOWER where natural
+8. 90%+ of Clearscope terms are used (MUST — count them: all HIGH, then MEDIUM/LOWER until 90%+)
 9. The article starts with a paragraph (no header) and ends with a paragraph (no "Conclusion" header)
 10. No Lemon.io developers are called "freelancers"
 

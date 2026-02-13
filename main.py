@@ -84,7 +84,7 @@ def process_page(page: dict, dry_run: bool = False) -> dict:
         print(f"    Clearscope terms: {[t['term'] for t in clearscope_terms[:5]]}...")
         return {"tech": tech, "url": url, "dry_run": True}
 
-    article = generate_article(
+    article, selected_h2_headers = generate_article(
         tech=tech,
         page_url=url,
         keywords=keywords,
@@ -103,13 +103,14 @@ def process_page(page: dict, dry_run: bool = False) -> dict:
     print(f"  ✓ Saved to {article_path}")
 
     # ── 7. Validate ───────────────────────────────────────────────────
+    # Only require the selected H2 headers (H3s are created by the model, not from templates)
     print("  Validating...")
     validation = validate_article(
         article=article,
         tech=tech,
         clearscope_terms=clearscope_terms,
         keywords=keywords,
-        headers_required=headers,
+        headers_required=selected_h2_headers,
     )
     report = format_validation_report(validation, tech)
     print(f"\n{report}")

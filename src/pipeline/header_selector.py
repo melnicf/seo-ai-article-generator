@@ -32,8 +32,8 @@ def select_headers(
         clearscope_terms: Optional Clearscope terms for SEO context.
 
     Returns:
-        (h2_headers, h3_headers) — selected H2s and remaining templates
-        available for H3 use.
+        (h2_headers, []) — selected H2s. H3 subheaders are not from templates;
+        the article model creates its own where appropriate.
     """
     cs_context = ""
     if clearscope_terms:
@@ -96,6 +96,5 @@ JSON array:"""
             h2_headers.append(h)
             used_indices.add(i)
 
-    h3_headers = [h for i, h in enumerate(all_headers) if i not in used_indices]
-
-    return h2_headers, h3_headers
+    # H3 subheaders are not taken from templates; the article model creates its own.
+    return h2_headers, []

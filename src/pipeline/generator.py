@@ -28,7 +28,7 @@ def generate_article(
     sc_queries: list[dict],
     clearscope_terms: list[dict],
     case_studies: dict,
-) -> str:
+) -> tuple[str, list[str]]:
     """Generate a single article by calling Claude API.
 
     Args:
@@ -42,7 +42,8 @@ def generate_article(
         case_studies: Dict with 'case_studies' and 'testimonials' keys.
 
     Returns:
-        The markdown article content as a string.
+        (article_markdown, selected_h2_headers) — article content and the H2
+        headers that were prescribed (for validation). H3s are created by the model.
     """
     if not ANTHROPIC_API_KEY:
         raise ValueError("ANTHROPIC_API_KEY not set. Add it to your .env file.")
@@ -92,4 +93,4 @@ def generate_article(
     word_count = len(article.split())
     print(f"  OK Generated {word_count} words in {elapsed:.1f}s")
 
-    return article
+    return article, h2_headers
