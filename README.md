@@ -153,25 +153,25 @@ The CSV must have these columns (Clearscope default export):
 ### Run the full pipeline (all pages in hire_pages.csv)
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 ### Run for the first N pages only
 
 ```bash
-python main.py --limit 5
+python3 main.py --limit 5
 ```
 
 ### Run for a specific technology
 
 ```bash
-python main.py --page python
+python3 main.py --page python
 ```
 
 ### Dry run (show data loaded, don't call Claude)
 
 ```bash
-python main.py --dry-run
+python3 main.py --dry-run
 ```
 
 ### Output
@@ -218,7 +218,7 @@ The pipeline is configured for a 5-article test run with these pages:
 | `java-developers` | Cached | Ready | Ready |
 | `app-developers` | Cached | Ready | Ready |
 
-Run `python main.py` to generate all 5.
+Run `python3 main.py` to generate all 5.
 
 ---
 
@@ -289,7 +289,7 @@ Suggested file: `scripts/validate_clearscope.py`
 [ ] Run Selenium Clearscope export script for all 500 keywords
 [ ] Verify all 500 CSVs exist in data/clearscope/
 [ ] Ensure SC API token is valid (may need re-auth)
-[ ] Run: python main.py (or in batches with --limit)
+[ ] Run: python3 main.py (or in batches with --limit)
 [ ] Run Selenium Clearscope grade validation
 [ ] Review articles scoring below A
 [ ] Re-generate articles that fail validation

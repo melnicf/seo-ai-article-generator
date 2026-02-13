@@ -27,13 +27,103 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "credentials.json
 SC_SITE_URL = os.getenv("SC_SITE_URL", "sc-domain:lemon.io")
 
 # ── Claude settings ────────────────────────────────────────────────────────
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = "claude-sonnet-4-5-20250929"
 CLAUDE_MAX_TOKENS = 16000  # ~4000 words
 CLAUDE_TEMPERATURE = 0.7
+SELECTOR_MODEL = "claude-haiku-4-5-20251001"  # fast model for header selection
 
 # ── Article generation settings ────────────────────────────────────────────
 TARGET_WORD_COUNT = 3000
 MIN_CLEARSCOPE_COVERAGE = 0.90  # 90% term coverage target
+
+# ── Suggested external links (official docs/sites) per technology ──────────
+# Key = tech name lowercase (as from extract_tech_from_url). Model MUST include 2-3 external links; these make it easy.
+TECH_OFFICIAL_LINKS = {
+    "python": [
+        ("Python", "https://www.python.org/"),
+        ("Python documentation", "https://docs.python.org/"),
+        ("PyPI", "https://pypi.org/"),
+        ("Django", "https://www.djangoproject.com/"),
+        ("Flask", "https://flask.palletsprojects.com/"),
+        ("FastAPI", "https://fastapi.tiangolo.com/"),
+    ],
+    "react": [
+        ("React", "https://react.dev/"),
+        ("React documentation", "https://react.dev/learn"),
+        ("React Native", "https://reactnative.dev/"),
+        ("Next.js", "https://nextjs.org/"),
+    ],
+    "node.js": [
+        ("Node.js", "https://nodejs.org/"),
+        ("Node.js documentation", "https://nodejs.org/docs/"),
+        ("npm", "https://www.npmjs.com/"),
+        ("Express", "https://expressjs.com/"),
+    ],
+    "java": [
+        ("Java", "https://www.oracle.com/java/"),
+        ("Java documentation", "https://docs.oracle.com/en/java/"),
+        ("Spring", "https://spring.io/"),
+        ("Maven", "https://maven.apache.org/"),
+    ],
+    "app": [
+        ("Apple Developer", "https://developer.apple.com/"),
+        ("Android Developers", "https://developer.android.com/"),
+        ("React Native", "https://reactnative.dev/"),
+        ("Flutter", "https://flutter.dev/"),
+    ],
+    "javascript": [
+        ("JavaScript", "https://developer.mozilla.org/en-US/docs/Web/JavaScript"),
+        ("MDN Web Docs", "https://developer.mozilla.org/"),
+        ("Node.js", "https://nodejs.org/"),
+    ],
+    "typescript": [
+        ("TypeScript", "https://www.typescriptlang.org/"),
+        ("TypeScript handbook", "https://www.typescriptlang.org/docs/"),
+    ],
+    "vue.js": [
+        ("Vue.js", "https://vuejs.org/"),
+        ("Vue documentation", "https://vuejs.org/guide/"),
+    ],
+    "angular": [
+        ("Angular", "https://angular.io/"),
+        ("Angular documentation", "https://angular.io/docs"),
+    ],
+    "php": [
+        ("PHP", "https://www.php.net/"),
+        ("PHP documentation", "https://www.php.net/docs.php"),
+        ("Laravel", "https://laravel.com/"),
+    ],
+    "ruby on rails": [
+        ("Ruby", "https://www.ruby-lang.org/"),
+        ("Ruby on Rails", "https://rubyonrails.org/"),
+        ("Rails guides", "https://guides.rubyonrails.org/"),
+    ],
+    "net": [
+        (".NET", "https://dotnet.microsoft.com/"),
+        (".NET documentation", "https://learn.microsoft.com/en-us/dotnet/"),
+    ],
+    "flutter": [
+        ("Flutter", "https://flutter.dev/"),
+        ("Flutter documentation", "https://docs.flutter.dev/"),
+        ("Dart", "https://dart.dev/"),
+    ],
+    "react native": [
+        ("React Native", "https://reactnative.dev/"),
+        ("React Native documentation", "https://reactnative.dev/docs/getting-started"),
+    ],
+    "django": [
+        ("Django", "https://www.djangoproject.com/"),
+        ("Django documentation", "https://docs.djangoproject.com/"),
+    ],
+    "laravel": [
+        ("Laravel", "https://laravel.com/"),
+        ("Laravel documentation", "https://laravel.com/docs"),
+    ],
+    "next.js": [
+        ("Next.js", "https://nextjs.org/"),
+        ("Next.js documentation", "https://nextjs.org/docs"),
+    ],
+}
 
 # ── Internal link pool ─────────────────────────────────────────────────────
 LEMON_INTERNAL_LINKS = {

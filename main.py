@@ -15,16 +15,18 @@ import json
 import sys
 from pathlib import Path
 
-from src.config import (
-    HIRE_PAGES_CSV, ARTICLE_OUTPUT_DIR, SC_CACHE_DIR,
-    CLEARSCOPE_DIR, CASE_STUDIES_CACHE,
+from src.config import HIRE_PAGES_CSV, ARTICLE_OUTPUT_DIR
+from src.loaders import (
+    load_keywords,
+    load_headers,
+    load_questions,
+    extract_tech_from_url,
+    load_sc_queries,
+    load_clearscope_terms,
+    get_case_studies,
 )
-from src.templates import load_keywords, load_headers, load_questions, extract_tech_from_url
-from src.case_studies import get_case_studies
-from src.search_console import load_sc_queries
-from src.clearscope import load_clearscope_terms
-from src.generator import generate_article
-from src.validate import validate_article, format_validation_report
+from src.pipeline import generate_article
+from src.validation import validate_article, format_validation_report
 
 
 def load_pages(csv_path: str) -> list[dict]:
