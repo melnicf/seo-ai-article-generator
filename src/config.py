@@ -27,10 +27,15 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "credentials.json
 SC_SITE_URL = os.getenv("SC_SITE_URL", "sc-domain:lemon.io")
 
 # ── Claude settings ────────────────────────────────────────────────────────
-CLAUDE_MODEL = "claude-sonnet-4-5-20250929"
+CLAUDE_MODEL = "claude-opus-4-6"
 CLAUDE_MAX_TOKENS = 16000  # ~4000 words
 CLAUDE_TEMPERATURE = 0.7
 SELECTOR_MODEL = "claude-haiku-4-5-20251001"  # fast model for header selection
+RESEARCHER_MODEL = "claude-sonnet-4-5-20250929"  # research step (web search)
+
+# ── Web search settings ───────────────────────────────────────────────────
+WEB_SEARCH_ENABLED = True
+WEB_SEARCH_MAX_USES = 5  # max searches per research request
 
 # ── Article generation settings ────────────────────────────────────────────
 TARGET_WORD_COUNT = 3000

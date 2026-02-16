@@ -15,43 +15,66 @@ Each `/hire/` page on Lemon.io (e.g., `/hire/python-developers/`, `/hire/node-js
 ```
 hire_pages.csv          → list of URLs to process
        ↓
-┌──────┴──────────────────────────────────────┐
-│  For each URL:                              │
-│                                             │
-│  1. Templates        (keywords.csv,         │
-│                       headers.csv,          │
-│                       questions.csv)        │
-│     → {TECH} replaced with tech name        │
-│                                             │
-│  2. Search Console   (Google SC API)        │
-│     → top 50 queries by impressions         │
-│     → cached to data/search_console/        │
-│                                             │
-│  3. Clearscope       (CSV export)           │
-│     → SEO terms with importance & variants  │
-│     → read from data/clearscope/            │
-│                                             │
-│  4. Case Studies     (scraped + cached)     │
-│     → 12 case studies, 46 testimonials      │
-│     → cached to data/case_studies/          │
-│                                             │
-│  5. Prompt Assembly  (src/prompt.py)        │
-│     → system prompt: writing rules,         │
-│       Lemon.io guidelines, link rules       │
-│     → user prompt: all data combined        │
-│                                             │
-│  6. Claude API       (src/generator.py)     │
-│     → generates ~3000 word markdown article │
-│                                             │
-│  7. Validation       (src/validate.py)      │
-│     → word count, H2 count, structure,      │
-│       links, Clearscope term coverage,      │
-│       keyword coverage, Lemon.io mentions   │
-│                                             │
-│  8. Save             (output/articles/)     │
-│     → {slug}.md + {slug}_validation.json    │
-└─────────────────────────────────────────────┘
+┌──────┴──────────────────────────────────────────┐
+│  For each URL:                                  │
+│                                                 │
+│  1. Templates        (keywords.csv,             │
+│                       headers.csv,              │
+│                       questions.csv)            │
+│     → {TECH} replaced with tech name            │
+│                                                 │
+│  2. Search Console   (Google SC API)            │
+│     → top 50 queries by impressions             │
+│     → cached to data/search_console/            │
+│                                                 │
+│  3. Clearscope       (CSV export)               │
+│     → SEO terms with importance & variants      │
+│     → read from data/clearscope/                │
+│                                                 │
+│  4. Case Studies     (scraped + cached)         │
+│     → 12 case studies, 46 testimonials          │
+│     → cached to data/case_studies/              │
+│                                                 │
+│  5. Header Selection (Haiku — fast model)       │
+│     → picks best 8 H2 headers from templates   │
+│                                                 │
+│  6. Web Research     (Sonnet + web search)      │
+│     → searches for current-year statistics,     │
+│       salary data, market trends, hiring        │
+│       context with source URLs                  │
+│     → returned as structured research brief     │
+│                                                 │
+│  7. Article Writing  (Opus — no tools)          │
+│     → system prompt: writing rules,             │
+│       Lemon.io guidelines, link rules,          │
+│       modern tech/AI context, uniqueness rules  │
+│     → user prompt: all data + research brief    │
+│     → generates ~3000 word markdown article     │
+│                                                 │
+│  8. Validation       (src/validation/)          │
+│     → word count, H2 count, structure,          │
+│       links, Clearscope term coverage,          │
+│       keyword coverage, Lemon.io mentions,      │
+│       cited statistics, data freshness          │
+│                                                 │
+│  9. Save             (output/articles/)         │
+│     → {slug}.md + {slug}_validation.json        │
+└─────────────────────────────────────────────────┘
 ```
+
+### Three-Step AI Pipeline
+
+| Step | Model | Purpose | Cost/article |
+|------|-------|---------|-------------|
+| **Header selection** | Haiku 4.5 | Pick best 8 H2 headers from templates | ~$0.01 |
+| **Web research** | Sonnet 4.5 + web search | Gather current-year stats, salary data, trends with source URLs | ~$0.08 |
+| **Article writing** | Opus 4.6 (no tools) | Write the article using all data + research brief | ~$0.40 |
+
+The research step is separated from writing so that:
+- The writer prompt stays focused on structure/SEO rules (no tool distractions)
+- Research can be cached and reused across regenerations
+- Research uses a cheaper model (Sonnet vs Opus)
+- Research results are inspectable before they reach the writer
 
 ### Data Sources Per Article
 
@@ -61,6 +84,7 @@ hire_pages.csv          → list of URLs to process
 | **Search Console** | Real search queries people use to find each `/hire/` page (impressions, clicks, position) | Google SC API → cached JSON |
 | **Clearscope** | SEO terms with importance (1-10), secondary variants, and suggested usage frequency | Manual CSV export from Clearscope → `data/clearscope/` |
 | **Case Studies** | 12 detailed case studies + 46 client testimonials from lemon.io/case-studies | Scraped once, cached to JSON |
+| **Web Research** | Current-year statistics, salary ranges, market trends, hiring data — all with source URLs | Live web search via Anthropic API |
 
 ---
 
@@ -77,13 +101,22 @@ ai-article-generator/
 │
 ├── src/
 │   ├── config.py            # All paths, API keys, model settings
-│   ├── templates.py         # Loads keywords/headers/questions CSVs
-│   ├── search_console.py    # Google SC API integration + caching
-│   ├── clearscope.py        # Parses Clearscope CSV exports
-│   ├── case_studies.py      # Scrapes lemon.io case studies
-│   ├── prompt.py            # Builds system + user prompts for Claude
-│   ├── generator.py         # Calls Anthropic Claude API
-│   └── validate.py          # Post-generation quality checks
+│   │
+│   ├── loaders/
+│   │   ├── templates.py     # Loads keywords/headers/questions CSVs
+│   │   ├── search_console.py # Google SC API integration + caching
+│   │   ├── clearscope.py    # Parses Clearscope CSV exports
+│   │   └── case_studies.py  # Scrapes lemon.io case studies
+│   │
+│   ├── pipeline/
+│   │   ├── generator.py     # Orchestrates 3-step pipeline
+│   │   ├── header_selector.py # AI header selection (Haiku)
+│   │   ├── researcher.py    # Web research step (Sonnet + web search)
+│   │   └── prompts.py       # Builds system + user prompts for Claude
+│   │
+│   └── validation/
+│       ├── checks.py        # Individual validation checks
+│       └── report.py        # Grading and report formatting
 │
 ├── data/
 │   ├── templates/
@@ -122,6 +155,8 @@ ANTHROPIC_API_KEY=sk-ant-...        # Your Anthropic API key
 GOOGLE_CREDENTIALS_PATH=credentials.json
 SC_SITE_URL=sc-domain:lemon.io      # Domain property format for Search Console
 ```
+
+**Important:** Web search must be enabled in your [Anthropic Console](https://console.anthropic.com/) under Privacy settings for the research step to work.
 
 ### 3. Google Search Console authentication
 
@@ -201,8 +236,22 @@ Each article is automatically validated for:
 | Clearscope coverage | 90%+ of recommended terms included |
 | Keyword coverage | Templated keywords present in article |
 | Header coverage | Templated headers reflected in article structure |
+| Cited statistics | Statistics have source links, no unattributed numbers |
+| Data freshness | Flags references to outdated years (pre-current-year) |
 
 Results are graded: **A+** (0 issues), **A** (1-2), **B** (3-4), **C** (5+).
+
+---
+
+## Prompt Highlights
+
+Key content requirements enforced by the prompt:
+
+- **Modern tech context:** Articles mention modern tooling (Supabase, Vercel, Tailwind, Prisma, etc.) and that Lemon.io developers are experienced with them
+- **AI integration:** Mentions AI-assisted coding workflows (Copilot, Cursor) and AI-infused product development (OpenAI/Anthropic APIs, vector DBs, RAG) — Lemon developers help build all of this
+- **Current data:** Research step searches the web for current-year statistics, salary data, and trends. Every stat must include a source link.
+- **Uniqueness:** Each article must vary its hook, structure, transitions, and examples — no formulaic patterns across 500 articles
+- **Lemon.io depth:** Goes beyond generic hiring advice — positions Lemon.io as expert in modern full-stack, AI-augmented, and infrastructure-heavy projects
 
 ---
 
@@ -289,6 +338,7 @@ Suggested file: `scripts/validate_clearscope.py`
 [ ] Run Selenium Clearscope export script for all 500 keywords
 [ ] Verify all 500 CSVs exist in data/clearscope/
 [ ] Ensure SC API token is valid (may need re-auth)
+[ ] Ensure web search is enabled in Anthropic Console
 [ ] Run: python3 main.py (or in batches with --limit)
 [ ] Run Selenium Clearscope grade validation
 [ ] Review articles scoring below A
@@ -298,12 +348,12 @@ Suggested file: `scripts/validate_clearscope.py`
 
 ### Cost estimate for 500 articles
 
-| Model | Input cost | Output cost | Total estimate |
-|-------|-----------|-------------|----------------|
-| Claude Sonnet | ~$1.50 | ~$7.50 | **~$9** |
-| Claude Opus | ~$7.50 | ~$37.50 | **~$45** |
-
-(Based on ~4K input tokens and ~4K output tokens per article at current Anthropic pricing.)
+| Step | Model | Per article | 500 articles |
+|------|-------|------------|-------------|
+| Header selection | Haiku 4.5 | ~$0.01 | ~$5 |
+| Web research | Sonnet 4.5 + search | ~$0.08 | ~$40 |
+| Article writing | Opus 4.6 | ~$0.40 | ~$200 |
+| **Total** | | **~$0.50** | **~$250** |
 
 ---
 
@@ -313,9 +363,13 @@ All settings live in `src/config.py`:
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| `CLAUDE_MODEL` | `claude-sonnet-4-20250514` | Anthropic model to use |
+| `CLAUDE_MODEL` | `claude-opus-4-6` | Main article generation model |
+| `SELECTOR_MODEL` | `claude-haiku-4-5-20251001` | Fast model for header selection |
+| `RESEARCHER_MODEL` | `claude-sonnet-4-5-20250929` | Model for web research step |
 | `CLAUDE_MAX_TOKENS` | `16000` | Max output tokens (~4000 words) |
 | `CLAUDE_TEMPERATURE` | `0.7` | Creativity level (0=deterministic, 1=creative) |
+| `WEB_SEARCH_ENABLED` | `True` | Enable/disable web research step |
+| `WEB_SEARCH_MAX_USES` | `5` | Max web searches per research request |
 | `TARGET_WORD_COUNT` | `3000` | Target article length |
 | `MIN_CLEARSCOPE_COVERAGE` | `0.90` | Minimum Clearscope term coverage |
 | `SC_SITE_URL` | `sc-domain:lemon.io` | Search Console property identifier |
@@ -341,3 +395,6 @@ All settings live in `src/config.py`:
 
 **Clearscope CSV loads 0 terms**
 → The CSV may have a BOM character. The parser handles `utf-8-sig` encoding, but if the file was re-saved with a different encoding, check the raw bytes.
+
+**Web search not working**
+→ Ensure web search is enabled in your [Anthropic Console](https://console.anthropic.com/) Privacy settings. The admin of your organization must enable it.

@@ -1,8 +1,9 @@
 """Orchestrate the full article generation pipeline.
 
-Two-step process:
+Three-step process:
 1. Header selection (fast model) — picks the best H2 headers for the tech
-2. Article generation (main model) — writes the article using selected headers
+2. Web research (mid model + web search) — gathers current stats/trends
+3. Article generation (main model) — writes the article using all inputs
 """
 
 import time
@@ -14,8 +15,10 @@ from src.config import (
     CLAUDE_MAX_TOKENS,
     CLAUDE_TEMPERATURE,
     SELECTOR_MODEL,
+    WEB_SEARCH_ENABLED,
 )
 from src.pipeline.header_selector import select_headers
+from src.pipeline.researcher import research_tech
 from src.pipeline.prompts import build_system_prompt, build_user_prompt
 
 
@@ -50,7 +53,7 @@ def generate_article(
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    # Step 1: Select headers with fast model
+    # ── Step 1: Select headers with fast model ────────────────────────────
     print(f"  -> Selecting headers for {tech} ({SELECTOR_MODEL})...")
     h2_headers, h3_headers = select_headers(
         client=client,
@@ -61,7 +64,12 @@ def generate_article(
     )
     print(f"  OK Selected {len(h2_headers)} H2 headers, {len(h3_headers)} available for H3")
 
-    # Step 2: Generate article with main model
+    # ── Step 2: Web research (separate call, cheaper model) ───────────────
+    research_brief = ""
+    if WEB_SEARCH_ENABLED:
+        research_brief = research_tech(client=client, tech=tech)
+
+    # ── Step 3: Generate article with main model (no tools) ───────────────
     system_prompt = build_system_prompt()
     user_prompt = build_user_prompt(
         tech=tech,
@@ -73,6 +81,7 @@ def generate_article(
         sc_queries=sc_queries,
         clearscope_terms=clearscope_terms,
         case_studies=case_studies,
+        research_brief=research_brief,
     )
 
     print(f"  -> Generating article ({CLAUDE_MODEL})...")
@@ -83,14 +92,16 @@ def generate_article(
         max_tokens=CLAUDE_MAX_TOKENS,
         temperature=CLAUDE_TEMPERATURE,
         system=system_prompt,
-        messages=[
-            {"role": "user", "content": user_prompt},
-        ],
+        messages=[{"role": "user", "content": user_prompt}],
     )
 
     elapsed = time.time() - start
     article = message.content[0].text
     word_count = len(article.split())
-    print(f"  OK Generated {word_count} words in {elapsed:.1f}s")
+    usage = message.usage
+    print(
+        f"  OK Generated {word_count} words in {elapsed:.1f}s "
+        f"({usage.input_tokens} in / {usage.output_tokens} out)"
+    )
 
     return article, h2_headers

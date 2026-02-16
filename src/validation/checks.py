@@ -1,8 +1,12 @@
 """Individual validation checks and the main validate_article orchestrator."""
 
 import re
+from datetime import datetime
+
 from src.loaders.clearscope import check_term_coverage
 from src.validation.report import compute_grade
+
+CURRENT_YEAR = datetime.now().year
 
 
 # ── Competitor domains ────────────────────────────────────────────────────
@@ -42,6 +46,7 @@ def validate_article(
         "header_coverage": check_header_coverage(article, headers_required),
         "clearscope_coverage": {},
         "keyword_coverage": check_keyword_coverage(article, keywords),
+        "cited_statistics": check_cited_statistics(article),
     }
 
     # Clearscope term coverage
@@ -138,6 +143,14 @@ def _collect_issues(results: dict, tech: str) -> tuple[list[str], list[str]]:
         issues.append(f"Too few keywords used: {kw_found}/{kw_cov.get('total', 0)} (need 5-10 exact phrases)")
     elif kw_cov.get("total", 0) > 0 and kw_found < 7:
         warnings.append(f"Keyword usage on low end: {kw_found}/{kw_cov.get('total', 0)} (target 5-10 exact phrases)")
+
+    cited = results.get("cited_statistics", {})
+    if cited.get("uncited_count", 0) > 3:
+        issues.append(f"{cited['uncited_count']} statistics without source links (max 3 allowed)")
+    elif cited.get("uncited_count", 0) > 0:
+        warnings.append(f"{cited['uncited_count']} statistics appear to lack source links")
+    if cited.get("outdated_count", 0) > 0:
+        warnings.append(f"{cited['outdated_count']} references to outdated data (pre-{CURRENT_YEAR - 1})")
 
     return issues, warnings
 
@@ -310,4 +323,55 @@ def check_keyword_coverage(article: str, keywords: list[str]) -> dict:
         "found": len(found),
         "coverage_pct": (len(found) / len(keywords) * 100) if keywords else 100,
         "missing": [kw for kw in keywords if kw.lower() not in lower_article],
+    }
+
+
+def check_cited_statistics(article: str) -> dict:
+    """Check that numeric statistics have source links and are recent.
+
+    Looks for patterns like percentages, dollar amounts, and large numbers
+    that indicate a statistic, then checks whether a markdown link appears
+    nearby (within the same sentence or adjacent text).
+    """
+    stat_pattern = re.compile(
+        r"(?:"
+        r"\d+(?:\.\d+)?%"           # percentages: 42%, 3.5%
+        r"|\$\d[\d,]*(?:\.\d+)?"    # dollar amounts: $150,000, $45.5
+        r"|\d{1,3}(?:,\d{3})+"      # large numbers with commas: 1,200,000
+        r"|\d+(?:\.\d+)?\s*(?:million|billion|trillion)"  # "8.2 million"
+        r")",
+        re.IGNORECASE,
+    )
+
+    link_pattern = re.compile(r"\[[^\]]+\]\(https?://[^)]+\)")
+
+    lines = article.split("\n")
+    total_stats = 0
+    uncited_stats = 0
+    uncited_examples: list[str] = []
+
+    for i, line in enumerate(lines):
+        if line.strip().startswith("#"):
+            continue
+        matches = stat_pattern.findall(line)
+        if not matches:
+            continue
+        total_stats += len(matches)
+        context = "\n".join(lines[max(0, i - 1) : i + 2])
+        if not link_pattern.search(context):
+            uncited_stats += len(matches)
+            for m in matches[:2]:
+                uncited_examples.append(f"{m} (line {i + 1})")
+
+    outdated_years = re.findall(
+        r"\b(201\d|202[0-3])\b", article
+    )
+
+    return {
+        "total_stats": total_stats,
+        "uncited_count": uncited_stats,
+        "uncited_examples": uncited_examples[:10],
+        "outdated_count": len(outdated_years),
+        "outdated_years": list(set(outdated_years)),
+        "pass": uncited_stats <= 3 and len(outdated_years) == 0,
     }

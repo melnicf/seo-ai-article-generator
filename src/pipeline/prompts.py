@@ -1,7 +1,11 @@
 """Build the system and user prompts for Claude article generation."""
 
 import random
+from datetime import datetime
+
 from src.config import LEMON_INTERNAL_LINKS, TECH_OFFICIAL_LINKS
+
+CURRENT_YEAR = datetime.now().year
 
 
 # ── System prompt ─────────────────────────────────────────────────────────
@@ -9,7 +13,10 @@ from src.config import LEMON_INTERNAL_LINKS, TECH_OFFICIAL_LINKS
 
 def build_system_prompt() -> str:
     """Return the system-level instructions for Claude."""
-    return """You are an expert SEO content writer specializing in technology hiring content for Lemon.io, a marketplace of vetted developers from Europe and Latin America.
+    year = CURRENT_YEAR
+    prev_year = year - 1
+
+    return f"""You are an expert SEO content writer specializing in technology hiring content for Lemon.io, a marketplace of vetted developers from Europe and Latin America.
 
 You write long-form articles (~3000 words) that are:
 - Technically accurate and up-to-date
@@ -48,6 +55,10 @@ The prompt provides TARGET KEYWORDS. These are exact phrases people search on Go
 - Call Lemon.io developers: dedicated, remote, part-time/full-time developers, engineers, programmers, coders, or experts
 - NEVER call Lemon.io developers "freelancers" — use that word only when discussing other platforms or general market context
 - Integrate Lemon.io case studies and testimonials as proof points — cite specific stats and quotes from real customers
+- Lemon.io developers work with the MODERN tech stack — not just core languages. When relevant to the technology being discussed, mention that Lemon developers are experienced with modern tooling such as: Supabase, Vercel, Tailwind CSS, Prisma, Next.js, Turborepo, Docker, GitHub Actions, and similar tools that define today's development workflows
+- AI-assisted development is now mainstream. Most modern development workflows incorporate AI coding tools (GitHub Copilot, Cursor, etc.). Lemon.io developers are fluent in AI-augmented workflows, meaning faster delivery and higher code quality
+- Modern products are increasingly AI-infused — they require integration with AI APIs (OpenAI, Anthropic, vector databases, retrieval-augmented generation pipelines). Lemon.io developers help startups build these AI-powered features, from chatbots to recommendation engines to intelligent search
+- When discussing what Lemon developers can help build, go beyond basic CRUD — mention modern patterns: serverless deployment, edge functions, real-time features, AI/ML integration, and infrastructure-as-code
 
 ## LINK RULES (MANDATORY — each is a hard requirement)
 
@@ -56,15 +67,25 @@ The prompt provides TARGET KEYWORDS. These are exact phrases people search on Go
 3. NEVER link to Lemon.io competitors (Toptal, Upwork, Fiverr, Arc, Turing, etc.)
 4. Format all links as standard markdown: [anchor text](URL)
 
-## CLEARSCOPE SEO TERMS (MANDATORY — 90%+ IS A MUST)
+## CLEARSCOPE SEO TERMS (MANDATORY — USE ALL OF THEM)
 
-- The user prompt includes a list of Clearscope terms. You MUST use 90%+ of these terms in the article — this is a hard requirement, not a suggestion. Include the primary term OR any of its variants naturally. HIGH importance terms are non-negotiable; add MEDIUM and LOWER until you reach 90%+ coverage. Articles below 90% fail validation and are rejected.
+- The user prompt includes a list of Clearscope terms. You MUST use every single one of these terms in the article — this is a hard requirement. Include the primary term OR any of its variants naturally. Do not skip any term. Articles that omit any Clearscope term fail validation and are rejected.
 
 ## CONTENT QUALITY
 
-- Include recent statistics, trends, and technical updates. Cite sources inline.
+- The user prompt includes a RESEARCH BRIEF with current statistics, salary data, and trends — gathered via live web search. USE this data throughout the article. Prefer the research data over your training data whenever they conflict.
+- Include {year} statistics, trends, and technical updates. Do NOT use data older than {prev_year} unless no newer data exists. Cite sources inline with links.
+- Every statistic or data point MUST include a source link — no unattributed numbers. Format: "According to the [Stack Overflow {year} Survey](https://...), ..."
 - Every claim about the technology must be accurate and current.
 - Professional but approachable tone — no corporate fluff.
+
+## UNIQUENESS (CRITICAL — each article must read differently)
+
+- This article is one of many for different technologies. It MUST NOT follow a formulaic pattern.
+- Vary your opening: use a different type of hook for each article — a surprising statistic, an industry trend, a concrete scenario, a rhetorical question, or a bold claim. Do NOT always open with "X powers Y million websites."
+- Vary paragraph structure, sentence rhythm, and transitions. Some sections should lead with examples, others with data, others with narrative.
+- Use unique examples, analogies, and scenarios specific to THIS technology's ecosystem — not generic ones that could apply to any language.
+- Do NOT reuse the same transitional phrases across sections (e.g., avoid repeating "Let's dive in", "Here's what you need to know", "When it comes to").
 
 Output format: Markdown with proper heading hierarchy (##, ###). No frontmatter, no meta tags — just the article content starting with the opening paragraph."""
 
@@ -82,6 +103,7 @@ def build_user_prompt(
     sc_queries: list[dict],
     clearscope_terms: list[dict],
     case_studies: dict,
+    research_brief: str = "",
 ) -> str:
     """Build the complete user prompt with all data sources.
 
@@ -95,9 +117,11 @@ def build_user_prompt(
         sc_queries: Search Console query data.
         clearscope_terms: Clearscope SEO terms.
         case_studies: Dict with 'case_studies' and 'testimonials' keys.
+        research_brief: Pre-gathered web research with sourced statistics.
     """
     sections = [
         _build_intro(tech, page_url),
+        _build_research_section(research_brief),
         _build_sc_section(sc_queries),
         _build_clearscope_section(clearscope_terms),
         _build_keyword_section(tech, keywords),
@@ -120,6 +144,18 @@ def _build_intro(tech: str, page_url: str) -> str:
     return f"""Write a ~3000-word article about hiring {tech} developers for the page: {page_url}
 
 The article is the "Hiring Guide" content section of this landing page on Lemon.io. It should help founders, CTOs, and startup leaders understand why they need {tech} developers, what to look for when hiring, how much it costs, and how to hire them through Lemon.io."""
+
+
+def _build_research_section(research_brief: str) -> str:
+    """Inject the pre-gathered web research into the prompt."""
+    if not research_brief:
+        return ""
+    return f"""
+## RESEARCH BRIEF (live web search results — USE THIS DATA)
+The following data was gathered via live web search. Use these statistics, salary figures, trends, and source links throughout the article. Prefer this data over your training data when they conflict. Preserve the source URLs exactly as provided — every statistic you cite must include its source link.
+
+{research_brief}
+"""
 
 
 def _build_sc_section(sc_queries: list[dict]) -> str:
@@ -166,16 +202,16 @@ def _build_clearscope_section(clearscope_terms: list[dict]) -> str:
     low_lines = "\n".join(f"  - {_fmt_term(t)}" for t in low[:30])
 
     return f"""
-## CLEARSCOPE SEO TERMS (MANDATORY — YOU MUST USE 90%+ OF THESE TERMS)
-This is a hard requirement: at least 90% of the terms below must appear in your article (primary term OR any listed variant). Articles that do not reach 90% coverage fail validation. Use the [use Nx] guidance for how often each term should appear. Prioritize: include ALL HIGH, then as many MEDIUM and LOWER as needed to reach 90%+.
+## CLEARSCOPE SEO TERMS (MANDATORY — YOU MUST USE ALL OF THESE TERMS)
+This is a hard requirement: every term below must appear in your article (primary term OR any listed variant). Do not skip any. Use the [use Nx] guidance for how often each term should appear. Articles that omit any term fail validation.
 
 HIGH IMPORTANCE (you MUST include ALL of these):
 {high_lines}
 
-MEDIUM IMPORTANCE (include as many as needed to reach 90%+):
+MEDIUM IMPORTANCE (you MUST include ALL of these):
 {medium_lines}
 
-LOWER IMPORTANCE (include where natural — every term counts toward the 90% target):
+LOWER IMPORTANCE (you MUST include ALL of these — work each in naturally):
 {low_lines}
 """
 
@@ -284,20 +320,26 @@ When you mention {tech}, a related framework, or a tool by name, add a link to i
 
 
 def _build_requirements(tech: str) -> str:
+    year = CURRENT_YEAR
+    prev_year = year - 1
+
     return f"""
 ## ADDITIONAL REQUIREMENTS
 - Article must be approximately 3000 words (2800-3200 range)
-- Start with a compelling opening paragraph — use a recent statistic or industry trend about {tech}. Do NOT use any header before this paragraph.
+- Start with a compelling opening paragraph — use a {year} statistic or industry trend about {tech} from the RESEARCH BRIEF above. Do NOT use any header before this paragraph.
 - End with a single closing paragraph (no "Conclusion" header) that mentions Lemon.io services with a link
 - Include 2-3 external links using the suggested official URLs above (or equivalent). Every article must have external links; do not omit them.
 - DO NOT link to any developer hiring platforms that compete with Lemon.io
 - Write in a professional but approachable tone
-- Every claim about the technology should be accurate and current
-- You MUST use 90%+ of the Clearscope terms listed above — this is non-negotiable. Include all HIGH, then add MEDIUM and LOWER until coverage is 90%+."""
+- Every claim about the technology should be accurate and current — use {year} data wherever possible, {prev_year} at the oldest. Use the research brief data.
+- Every statistic MUST include a source link (e.g., [Stack Overflow {year} Survey](URL)). No unattributed numbers.
+- You MUST use every Clearscope term listed above — all of them. Do not skip any. This is non-negotiable.
+- Where relevant to {tech}, mention modern development realities: AI-assisted coding workflows, AI API integrations in products, modern deployment/infra tools (Vercel, Supabase, Docker, etc.), and how Lemon.io developers are equipped for all of this."""
 
 
 def _build_self_check() -> str:
-    return """
+    year = CURRENT_YEAR
+    return f"""
 ## PRE-SUBMISSION SELF-CHECK
 Before outputting the article, mentally verify:
 1. ONLY the prescribed H2 headers are used — no extra H2 sections added
@@ -307,8 +349,11 @@ Before outputting the article, mentally verify:
 5. At least 2 internal Lemon.io links are included (using short anchors)
 6. At least 2 external links are included (use the suggested official URLs — do not skip)
 7. At least 2 case studies or testimonials are woven into the body
-8. 90%+ of Clearscope terms are used (MUST — count them: all HIGH, then MEDIUM/LOWER until 90%+)
+8. Every Clearscope term is used (MUST — use all of them, do not skip any)
 9. The article starts with a paragraph (no header) and ends with a paragraph (no "Conclusion" header)
 10. No Lemon.io developers are called "freelancers"
+11. Every statistic has a source link — no naked numbers without attribution
+12. Statistics are from {year} or {year - 1} — no outdated data
+13. Modern development context is included (AI coding tools, AI-infused products, modern tooling) where natural
 
 If any check fails, revise the article before outputting."""
