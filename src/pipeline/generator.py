@@ -17,6 +17,7 @@ from src.config import (
     SELECTOR_MODEL,
     WEB_SEARCH_ENABLED,
 )
+from src.pipeline.anthropic_retry import messages_create_with_retry
 from src.pipeline.header_selector import select_headers
 from src.pipeline.researcher import research_tech
 from src.pipeline.prompts import build_system_prompt, build_user_prompt
@@ -87,7 +88,8 @@ def generate_article(
     print(f"  -> Generating article ({CLAUDE_MODEL})...")
     start = time.time()
 
-    message = client.messages.create(
+    message = messages_create_with_retry(
+        client,
         model=CLAUDE_MODEL,
         max_tokens=CLAUDE_MAX_TOKENS,
         temperature=CLAUDE_TEMPERATURE,

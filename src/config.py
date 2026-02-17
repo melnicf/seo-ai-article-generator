@@ -27,7 +27,7 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "credentials.json
 SC_SITE_URL = os.getenv("SC_SITE_URL", "sc-domain:lemon.io")
 
 # ── Claude settings ────────────────────────────────────────────────────────
-CLAUDE_MODEL = "claude-opus-4-6"
+CLAUDE_MODEL = "claude-opus-4-5"
 CLAUDE_MAX_TOKENS = 16000  # ~4000 words
 CLAUDE_TEMPERATURE = 0.7
 SELECTOR_MODEL = "claude-haiku-4-5-20251001"  # fast model for header selection
@@ -35,11 +35,12 @@ RESEARCHER_MODEL = "claude-sonnet-4-5-20250929"  # research step (web search)
 
 # ── Web search settings ───────────────────────────────────────────────────
 WEB_SEARCH_ENABLED = True
-WEB_SEARCH_MAX_USES = 5  # max searches per research request
+WEB_SEARCH_MAX_USES = 3  # max searches per research request (keeps research brief lean; article max 6 external links)
 
 # ── Article generation settings ────────────────────────────────────────────
 TARGET_WORD_COUNT = 3000
 MIN_CLEARSCOPE_COVERAGE = 0.90  # 90% term coverage target
+EXTERNAL_LINKS_MAX = 6  # article must have 2-3 external links, never more than 6
 
 # ── Suggested external links (official docs/sites) per technology ──────────
 # Key = tech name lowercase (as from extract_tech_from_url). Model MUST include 2-3 external links; these make it easy.

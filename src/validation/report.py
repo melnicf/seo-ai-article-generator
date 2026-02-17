@@ -1,5 +1,7 @@
 """Grading and human-readable report formatting for validation results."""
 
+from src.config import EXTERNAL_LINKS_MAX
+
 
 def compute_grade(issues: list, warnings: list) -> str:
     """Compute article grade from issues and warnings.
@@ -50,7 +52,7 @@ def format_validation_report(results: dict, tech: str) -> str:
         f"  [{_status(wc['pass'])}] Word count:       {wc['count']}  (target: 2800-3200)",
         f"  [{_status(h2['pass'])}] H2 headers:       {h2['count']}  (target: 7-9)",
         f"  [{_status(il['pass'])}] Internal links:   {il['count']}  (need: 2-3)",
-        f"  [{_status(el['pass'])}] External links:   {el['count']}  (need: 2-3)",
+        f"  [{_status(el['pass'])}] External links:   {el['count']}  (need: 2-3, max: {EXTERNAL_LINKS_MAX})",
     ]
 
     # Header templates

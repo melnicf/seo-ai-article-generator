@@ -13,6 +13,7 @@ from typing import Optional
 import anthropic
 
 from src.config import SELECTOR_MODEL
+from src.pipeline.anthropic_retry import messages_create_with_retry
 
 
 def select_headers(
@@ -59,7 +60,8 @@ Respond with ONLY a JSON array of the {num_h2} selected header numbers (1-indexe
 
 JSON array:"""
 
-    message = client.messages.create(
+    message = messages_create_with_retry(
+        client,
         model=SELECTOR_MODEL,
         max_tokens=200,
         temperature=0,

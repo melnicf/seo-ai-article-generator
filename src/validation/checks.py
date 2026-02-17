@@ -3,6 +3,7 @@
 import re
 from datetime import datetime
 
+from src.config import EXTERNAL_LINKS_MAX
 from src.loaders.clearscope import check_term_coverage
 from src.validation.report import compute_grade
 
@@ -116,8 +117,10 @@ def _collect_issues(results: dict, tech: str) -> tuple[list[str], list[str]]:
 
     if results["external_links"]["count"] < 2:
         issues.append(f"Only {results['external_links']['count']} external links (need 2-3)")
-    if results["external_links"]["count"] > 4:
-        warnings.append(f"Too many external links: {results['external_links']['count']} (target 2-3)")
+    if results["external_links"]["count"] > EXTERNAL_LINKS_MAX:
+        issues.append(f"Too many external links: {results['external_links']['count']} (max {EXTERNAL_LINKS_MAX})")
+    elif results["external_links"]["count"] > 4:
+        warnings.append(f"External links above target: {results['external_links']['count']} (target 2-3, max {EXTERNAL_LINKS_MAX})")
 
     if not results["no_competitor_links"]["pass"]:
         issues.append(f"Contains competitor links: {results['no_competitor_links']['found']}")
@@ -235,7 +238,12 @@ def check_internal_links(article: str) -> dict:
 def check_external_links(article: str) -> dict:
     all_links = re.findall(r"\[([^\]]+)\]\((https?://[^\)]+)\)", article)
     external = [(anchor, url) for anchor, url in all_links if "lemon.io" not in url]
-    return {"count": len(external), "links": external, "pass": len(external) >= 2}
+    count = len(external)
+    return {
+        "count": count,
+        "links": external,
+        "pass": 2 <= count <= EXTERNAL_LINKS_MAX,
+    }
 
 
 def check_no_competitor_links(article: str) -> dict:

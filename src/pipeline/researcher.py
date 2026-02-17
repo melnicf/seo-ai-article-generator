@@ -14,6 +14,7 @@ from src.config import (
     RESEARCHER_MODEL,
     WEB_SEARCH_MAX_USES,
 )
+from src.pipeline.anthropic_retry import messages_create_with_retry
 
 CURRENT_YEAR = datetime.now().year
 
@@ -62,6 +63,8 @@ Return your findings as a structured brief. For each data point:
 Example:
 - According to the [Stack Overflow 2026 Developer Survey](https://survey.stackoverflow.co/2026/), Python is used by 51% of professional developers worldwide.
 
+Keep the brief focused: use at most 4-6 distinct source URLs in total so the article can stay within its 6 external link limit. Prefer a few strong sources (e.g. Stack Overflow, official surveys, government or major job sites) over many weak ones.
+
 Do NOT make up statistics. If you cannot find current data for something, say so explicitly — do not fabricate numbers. Only include data you found via web search with real source URLs.
 
 Compile all findings into a single research brief."""
@@ -108,7 +111,8 @@ def research_tech(
     print(f"  -> Researching {tech} ({RESEARCHER_MODEL} + web search)...")
     start = time.time()
 
-    message = client.messages.create(
+    message = messages_create_with_retry(
+        client,
         model=RESEARCHER_MODEL,
         max_tokens=4096,
         temperature=0.0,
@@ -125,7 +129,8 @@ def research_tech(
     # Handle pause_turn: Claude may pause long-running turns with web search
     while message.stop_reason == "pause_turn":
         print("  .. research paused (searching), continuing...")
-        message = client.messages.create(
+        message = messages_create_with_retry(
+            client,
             model=RESEARCHER_MODEL,
             max_tokens=4096,
             temperature=0.0,
