@@ -235,7 +235,7 @@ class SheetsClient:
         response = self.service.spreadsheets().values().append(
             spreadsheetId=self.spreadsheet_id,
             range="Run History!A:I",
-            valueInputOption="USER_ENTERED",  # Required for HYPERLINK formula
+            valueInputOption="RAW",
             insertDataOption="INSERT_ROWS",
             body={"values": [row]},
         ).execute()
@@ -245,17 +245,11 @@ class SheetsClient:
             self._add_notes_to_result_row(response, issues, warnings)
 
     def _output_file_to_link(self, path: str) -> str:
-        """Convert output file path to HYPERLINK formula that opens the folder."""
+        """Return full absolute path (file:// links are blocked by browsers)."""
         if not path or not path.strip():
             return ""
-        p = Path(path)
         try:
-            folder = p.parent.resolve()
-            folder_uri = folder.as_uri()
-            display = p.name
-            # Escape quotes in display text for formula safety
-            display = display.replace('"', '""')
-            return f'=HYPERLINK("{folder_uri}", "{display}")'
+            return str(Path(path).resolve())
         except (OSError, RuntimeError):
             return path
 
