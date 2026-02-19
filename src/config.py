@@ -1,5 +1,11 @@
 """Central configuration for the article generation pipeline."""
 
+import warnings
+
+# Suppress noisy third-party warnings (Python 3.9 EOL, OpenSSL/LibreSSL)
+warnings.filterwarnings("ignore", message=".*OpenSSL.*")
+warnings.filterwarnings("ignore", category=FutureWarning, module="google")
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -27,11 +33,18 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "credentials.json
 SC_SITE_URL = os.getenv("SC_SITE_URL", "sc-domain:lemon.io")
 
 # ── Claude settings ────────────────────────────────────────────────────────
-CLAUDE_MODEL = "claude-opus-4-5"
+CLAUDE_MODEL = "claude-opus-4-6"
 CLAUDE_MAX_TOKENS = 16000  # ~4000 words
 CLAUDE_TEMPERATURE = 0.7
 SELECTOR_MODEL = "claude-haiku-4-5-20251001"  # fast model for header selection
 RESEARCHER_MODEL = "claude-sonnet-4-5-20250929"  # research step (web search)
+
+# ── Google Sheets ─────────────────────────────────────────────────────────
+SHEETS_SPREADSHEET_ID = os.getenv("SHEETS_SPREADSHEET_ID", "")
+
+# ── Clearscope ───────────────────────────────────────────────────────────
+CLEARSCOPE_DRAFT_URL = os.getenv("CLEARSCOPE_DRAFT_URL", "")
+CLEARSCOPE_WORKSPACE = os.getenv("CLEARSCOPE_WORKSPACE", "lemon-io")
 
 # ── Web search settings ───────────────────────────────────────────────────
 WEB_SEARCH_ENABLED = True
