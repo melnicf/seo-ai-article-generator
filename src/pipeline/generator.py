@@ -6,6 +6,8 @@ Three-step process:
 3. Article generation (main model) — writes the article using all inputs
 """
 
+from __future__ import annotations
+
 import time
 import anthropic
 
@@ -32,6 +34,7 @@ def generate_article(
     sc_queries: list[dict],
     clearscope_terms: list[dict],
     case_studies: dict,
+    system_prompt_override: str | None = None,
 ) -> tuple[str, list[str]]:
     """Generate a single article by calling Claude API.
 
@@ -44,9 +47,11 @@ def generate_article(
         sc_queries: Search Console query data.
         clearscope_terms: Clearscope SEO terms.
         case_studies: Dict with 'case_studies' and 'testimonials' keys.
+        system_prompt_override: Optional full system prompt from Google Sheets.
+                               If provided, replaces the built-in prompt entirely.
 
     Returns:
-        (article_markdown, selected_h2_headers) — article content and the H2
+        (article_html, selected_h2_headers) — article content and the H2
         headers that were prescribed (for validation). H3s are created by the model.
     """
     if not ANTHROPIC_API_KEY:
@@ -71,7 +76,7 @@ def generate_article(
         research_brief = research_tech(client=client, tech=tech)
 
     # ── Step 3: Generate article with main model (no tools) ───────────────
-    system_prompt = build_system_prompt()
+    system_prompt = build_system_prompt(full_override=system_prompt_override)
     user_prompt = build_user_prompt(
         tech=tech,
         page_url=page_url,

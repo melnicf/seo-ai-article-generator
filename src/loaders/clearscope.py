@@ -8,22 +8,30 @@ from src.config import CLEARSCOPE_DIR
 
 
 def load_clearscope_terms(tech_slug: str) -> list[dict]:
-    """Load Clearscope recommended terms from a CSV export.
+    """Load Clearscope recommended terms from CSV export or Selenium JSON cache.
 
-    Actual Clearscope CSV format:
-      Primary Variant, Secondary Variants, Importance, Typical Uses Min,
-      Typical Uses Max, Uses, Semantic Group
+    Checks for JSON first (scraped by Selenium), then falls back to CSV.
 
-    Files should be placed in data/clearscope/<tech_slug>.csv.
+    Files should be placed in data/clearscope/<tech_slug>.csv or .json.
 
     Returns list of dicts: {term, variants, importance, typical_uses_min,
                             typical_uses_max, current_uses}
     """
+    import json as _json
+
+    # Prefer JSON cache (from Selenium scraper)
+    json_path = CLEARSCOPE_DIR / f"{tech_slug}.json"
+    if json_path.exists():
+        terms = _json.loads(json_path.read_text())
+        terms.sort(key=lambda t: int(str(t.get("importance", "0")).split("/")[0] or 0), reverse=True)
+        print(f"  Loaded {len(terms)} Clearscope terms for {tech_slug} (from Selenium cache)")
+        return terms
+
     csv_path = CLEARSCOPE_DIR / f"{tech_slug}.csv"
 
     if not csv_path.exists():
-        print(f"  No Clearscope data found at {csv_path}")
-        print(f"  Export terms from Clearscope for this keyword and save as {csv_path}")
+        print(f"  No Clearscope data found for {tech_slug}")
+        print(f"  Run with --scrape-clearscope or export CSV to {csv_path}")
         return []
 
     terms = []

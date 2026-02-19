@@ -36,6 +36,19 @@ def load_questions(tech: str) -> list[str]:
     return [q.replace("{TECH}", tech) for q in raw]
 
 
+def extract_slug_base(url: str) -> str:
+    """Extract slug base from hire URL for exact matching.
+
+    Example: '.../java-developers/' -> 'java', '.../vue-js-developers/' -> 'vue-js'
+    Use for --tech filtering so 'java' matches only java, not javascript.
+    """
+    slug = url.rstrip("/").split("/")[-1]
+    for suffix in ("-developers", "-developer", "-engineers", "-engineer",
+                   "-analysts", "-analyst", "-scientists", "-scientist"):
+        slug = slug.replace(suffix, "")
+    return slug.lower()
+
+
 def extract_tech_from_url(url: str) -> str:
     """Extract a human-readable tech name from a lemon.io hire URL.
 
@@ -43,7 +56,9 @@ def extract_tech_from_url(url: str) -> str:
              'https://lemon.io/hire/ruby-on-rails-developers/' -> 'Ruby on Rails'
     """
     slug = url.rstrip("/").split("/")[-1]
-    slug = slug.replace("-developers", "").replace("-developer", "")
+    for suffix in ("-developers", "-developer", "-engineers", "-engineer",
+                    "-analysts", "-analyst", "-scientists", "-scientist"):
+        slug = slug.replace(suffix, "")
 
     KNOWN_CASING = {
         "javascript": "JavaScript",
