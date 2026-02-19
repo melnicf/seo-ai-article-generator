@@ -1,535 +1,521 @@
 [
   {
     "query": "hire python developers",
-    "clicks": 1,
-    "impressions": 2798,
-    "ctr": 0.0004,
-    "position": 13.8
+    "clicks": 3,
+    "impressions": 2901,
+    "ctr": 0.001,
+    "position": 13.0
   },
   {
     "query": "hire python developer",
     "clicks": 1,
-    "impressions": 1789,
+    "impressions": 1790,
     "ctr": 0.0006,
     "position": 8.4
   },
   {
     "query": "python developers for hire",
     "clicks": 0,
-    "impressions": 944,
+    "impressions": 940,
     "ctr": 0,
     "position": 3.0
   },
   {
     "query": "hire python programmer",
     "clicks": 0,
-    "impressions": 660,
+    "impressions": 640,
     "ctr": 0,
-    "position": 8.7
-  },
-  {
-    "query": "python developer hire",
-    "clicks": 1,
-    "impressions": 652,
-    "ctr": 0.0015,
-    "position": 10.4
+    "position": 8.9
   },
   {
     "query": "hire remote python developers",
     "clicks": 0,
-    "impressions": 627,
-    "ctr": 0,
-    "position": 5.2
-  },
-  {
-    "query": "hire dedicated python developers",
-    "clicks": 0,
-    "impressions": 610,
-    "ctr": 0,
-    "position": 27.8
-  },
-  {
-    "query": "hire a python developer",
-    "clicks": 0,
-    "impressions": 609,
-    "ctr": 0,
-    "position": 8.8
-  },
-  {
-    "query": "hire python web developers",
-    "clicks": 0,
-    "impressions": 568,
-    "ctr": 0,
-    "position": 4.8
-  },
-  {
-    "query": "hire python programmers",
-    "clicks": 0,
-    "impressions": 563,
-    "ctr": 0,
-    "position": 5.9
-  },
-  {
-    "query": "find python developers",
-    "clicks": 0,
-    "impressions": 391,
-    "ctr": 0,
-    "position": 7.0
-  },
-  {
-    "query": "hire python coders",
-    "clicks": 0,
-    "impressions": 384,
-    "ctr": 0,
-    "position": 6.8
-  },
-  {
-    "query": "hire python experts",
-    "clicks": 0,
-    "impressions": 379,
-    "ctr": 0,
-    "position": 5.3
-  },
-  {
-    "query": "hire a python programmer",
-    "clicks": 0,
-    "impressions": 372,
+    "impressions": 620,
     "ctr": 0,
     "position": 5.5
   },
   {
-    "query": "python developer for hire",
+    "query": "hire a python developer",
     "clicks": 0,
-    "impressions": 331,
+    "impressions": 615,
     "ctr": 0,
-    "position": 4.2
+    "position": 9.1
   },
   {
-    "query": "python programmers for hire",
+    "query": "python developer hire",
     "clicks": 0,
-    "impressions": 323,
+    "impressions": 606,
     "ctr": 0,
-    "position": 3.8
+    "position": 11.0
   },
   {
-    "query": "hire dedicated python developer",
+    "query": "hire dedicated python developers",
     "clicks": 0,
-    "impressions": 319,
+    "impressions": 601,
     "ctr": 0,
-    "position": 23.9
+    "position": 26.9
   },
   {
-    "query": "python coders for hire",
+    "query": "hire python web developers",
     "clicks": 0,
-    "impressions": 310,
+    "impressions": 591,
     "ctr": 0,
-    "position": 4.1
+    "position": 4.7
   },
   {
-    "query": "python programmer for hire",
+    "query": "hire python programmers",
     "clicks": 0,
-    "impressions": 302,
+    "impressions": 537,
     "ctr": 0,
-    "position": 3.8
+    "position": 5.7
   },
   {
-    "query": "hire python development company",
+    "query": "find python developers",
     "clicks": 0,
-    "impressions": 295,
-    "ctr": 0,
-    "position": 4.2
-  },
-  {
-    "query": "hire python expert",
-    "clicks": 0,
-    "impressions": 276,
-    "ctr": 0,
-    "position": 11.7
-  },
-  {
-    "query": "hire python development team",
-    "clicks": 0,
-    "impressions": 248,
-    "ctr": 0,
-    "position": 7.2
-  },
-  {
-    "query": "hire python coder",
-    "clicks": 0,
-    "impressions": 247,
-    "ctr": 0,
-    "position": 10.7
-  },
-  {
-    "query": "hire python software development firm",
-    "clicks": 0,
-    "impressions": 223,
-    "ctr": 0,
-    "position": 6.4
-  },
-  {
-    "query": "hire python development agency",
-    "clicks": 0,
-    "impressions": 204,
+    "impressions": 421,
     "ctr": 0,
     "position": 7.8
   },
   {
-    "query": "hire full stack python developers",
+    "query": "hire python development company",
     "clicks": 0,
-    "impressions": 197,
+    "impressions": 395,
     "ctr": 0,
-    "position": 14.9
+    "position": 4.3
   },
   {
-    "query": "hire expert python developers",
+    "query": "hire python coders",
     "clicks": 0,
-    "impressions": 186,
+    "impressions": 378,
     "ctr": 0,
-    "position": 4.5
+    "position": 6.0
   },
   {
-    "query": "hire python software development agency",
+    "query": "hire python experts",
     "clicks": 0,
-    "impressions": 179,
+    "impressions": 372,
     "ctr": 0,
-    "position": 19.3
+    "position": 6.9
   },
   {
-    "query": "hire python development services",
+    "query": "hire a python programmer",
     "clicks": 0,
-    "impressions": 177,
+    "impressions": 346,
     "ctr": 0,
-    "position": 7.4
+    "position": 5.1
   },
   {
-    "query": "hire a python expert",
+    "query": "python developer for hire",
     "clicks": 0,
-    "impressions": 151,
+    "impressions": 327,
+    "ctr": 0,
+    "position": 3.7
+  },
+  {
+    "query": "hire dedicated python developer",
+    "clicks": 0,
+    "impressions": 317,
+    "ctr": 0,
+    "position": 21.5
+  },
+  {
+    "query": "python programmers for hire",
+    "clicks": 0,
+    "impressions": 306,
+    "ctr": 0,
+    "position": 3.9
+  },
+  {
+    "query": "hire python development team",
+    "clicks": 0,
+    "impressions": 288,
     "ctr": 0,
     "position": 6.6
   },
   {
-    "query": "find python developer",
+    "query": "hire python expert",
     "clicks": 0,
-    "impressions": 144,
+    "impressions": 281,
     "ctr": 0,
-    "position": 7.0
+    "position": 13.2
   },
   {
-    "query": "hire python development",
+    "query": "python coders for hire",
     "clicks": 0,
-    "impressions": 123,
+    "impressions": 272,
     "ctr": 0,
-    "position": 16.4
+    "position": 3.6
   },
   {
-    "query": "best python developers",
+    "query": "python programmer for hire",
     "clicks": 0,
-    "impressions": 121,
+    "impressions": 269,
     "ctr": 0,
-    "position": 18.0
+    "position": 3.4
   },
   {
-    "query": "hire a python engineer",
+    "query": "hire python development services",
     "clicks": 0,
-    "impressions": 121,
+    "impressions": 255,
     "ctr": 0,
-    "position": 9.6
+    "position": 6.0
   },
   {
-    "query": "hire remote python developer",
+    "query": "hire python software development firm",
     "clicks": 0,
-    "impressions": 119,
+    "impressions": 252,
     "ctr": 0,
-    "position": 8.1
+    "position": 6.1
   },
   {
-    "query": "hire python engineer",
+    "query": "hire python coder",
     "clicks": 0,
-    "impressions": 112,
+    "impressions": 222,
+    "ctr": 0,
+    "position": 11.6
+  },
+  {
+    "query": "hire full stack python developers",
+    "clicks": 0,
+    "impressions": 213,
     "ctr": 0,
     "position": 15.3
   },
   {
+    "query": "hire python development agency",
+    "clicks": 0,
+    "impressions": 208,
+    "ctr": 0,
+    "position": 7.5
+  },
+  {
+    "query": "hire expert python developers",
+    "clicks": 0,
+    "impressions": 207,
+    "ctr": 0,
+    "position": 4.4
+  },
+  {
+    "query": "hire python software development agency",
+    "clicks": 0,
+    "impressions": 202,
+    "ctr": 0,
+    "position": 18.9
+  },
+  {
+    "query": "hire a python expert",
+    "clicks": 0,
+    "impressions": 139,
+    "ctr": 0,
+    "position": 7.2
+  },
+  {
+    "query": "find python developer",
+    "clicks": 0,
+    "impressions": 135,
+    "ctr": 0,
+    "position": 7.4
+  },
+  {
+    "query": "hire remote python developer",
+    "clicks": 0,
+    "impressions": 121,
+    "ctr": 0,
+    "position": 8.1
+  },
+  {
+    "query": "hire a python engineer",
+    "clicks": 0,
+    "impressions": 119,
+    "ctr": 0,
+    "position": 10.0
+  },
+  {
+    "query": "hire python engineer",
+    "clicks": 0,
+    "impressions": 111,
+    "ctr": 0,
+    "position": 17.5
+  },
+  {
+    "query": "best python developers",
+    "clicks": 0,
+    "impressions": 109,
+    "ctr": 0,
+    "position": 18.3
+  },
+  {
+    "query": "looking for python developers",
+    "clicks": 0,
+    "impressions": 109,
+    "ctr": 0,
+    "position": 15.0
+  },
+  {
+    "query": "hire python development",
+    "clicks": 0,
+    "impressions": 105,
+    "ctr": 0,
+    "position": 18.0
+  },
+  {
     "query": "hire dedicated python web developers",
     "clicks": 0,
-    "impressions": 106,
+    "impressions": 102,
     "ctr": 0,
-    "position": 29.9
+    "position": 25.9
   },
   {
     "query": "how to hire a python developer",
     "clicks": 0,
     "impressions": 99,
     "ctr": 0,
-    "position": 7.6
+    "position": 7.4
   },
   {
     "query": "hire python developers team",
     "clicks": 0,
-    "impressions": 92,
+    "impressions": 86,
     "ctr": 0,
-    "position": 19.2
-  },
-  {
-    "query": "looking for python developers",
-    "clicks": 0,
-    "impressions": 90,
-    "ctr": 0,
-    "position": 10.8
-  },
-  {
-    "query": "who hires python programmers",
-    "clicks": 0,
-    "impressions": 90,
-    "ctr": 0,
-    "position": 6.6
-  },
-  {
-    "query": "top python developers",
-    "clicks": 0,
-    "impressions": 88,
-    "ctr": 0,
-    "position": 23.6
+    "position": 25.7
   },
   {
     "query": "how to hire python developers",
     "clicks": 0,
-    "impressions": 85,
+    "impressions": 80,
     "ctr": 0,
-    "position": 8.9
+    "position": 8.0
   },
   {
-    "query": "hire python ai developer",
+    "query": "top python developers",
     "clicks": 0,
     "impressions": 80,
     "ctr": 0,
-    "position": 4.5
-  },
-  {
-    "query": "hire cython developers",
-    "clicks": 0,
-    "impressions": 79,
-    "ctr": 0,
-    "position": 15.3
-  },
-  {
-    "query": "hire python software development team",
-    "clicks": 0,
-    "impressions": 79,
-    "ctr": 0,
-    "position": 8.2
-  },
-  {
-    "query": "hire python team",
-    "clicks": 0,
-    "impressions": 79,
-    "ctr": 0,
-    "position": 26.6
+    "position": 28.8
   },
   {
     "query": "hire a python coder",
     "clicks": 0,
-    "impressions": 77,
+    "impressions": 78,
     "ctr": 0,
-    "position": 7.0
+    "position": 7.2
   },
   {
-    "query": "hire matplotlib developers",
+    "query": "hire cython developers",
+    "clicks": 0,
+    "impressions": 78,
+    "ctr": 0,
+    "position": 13.5
+  },
+  {
+    "query": "hire python software development team",
     "clicks": 0,
     "impressions": 73,
     "ctr": 0,
-    "position": 76.6
+    "position": 9.9
   },
   {
-    "query": "hire python 3 developers",
+    "query": "hire python ai developer",
     "clicks": 0,
-    "impressions": 71,
+    "impressions": 69,
     "ctr": 0,
-    "position": 19.7
+    "position": 4.6
+  },
+  {
+    "query": "hire python team",
+    "clicks": 0,
+    "impressions": 68,
+    "ctr": 0,
+    "position": 28.5
   },
   {
     "query": "hire top python developers",
     "clicks": 0,
-    "impressions": 69,
+    "impressions": 68,
     "ctr": 0,
-    "position": 6.9
+    "position": 6.4
   },
   {
     "query": "hire freelance python developer",
     "clicks": 0,
     "impressions": 67,
     "ctr": 0,
-    "position": 9.6
+    "position": 8.7
   },
   {
-    "query": "hire a programmer python",
+    "query": "hire python 3 developers",
     "clicks": 0,
-    "impressions": 66,
+    "impressions": 67,
     "ctr": 0,
-    "position": 6.9
+    "position": 21.4
   },
   {
     "query": "hire python architect",
     "clicks": 0,
-    "impressions": 66,
+    "impressions": 67,
     "ctr": 0,
-    "position": 8.1
+    "position": 8.8
+  },
+  {
+    "query": "hire a programmer python",
+    "clicks": 0,
+    "impressions": 65,
+    "ctr": 0,
+    "position": 6.7
   },
   {
     "query": "hire best python developers",
     "clicks": 0,
     "impressions": 64,
     "ctr": 0,
+    "position": 7.1
+  },
+  {
+    "query": "hire matplotlib developers",
+    "clicks": 0,
+    "impressions": 64,
+    "ctr": 0,
+    "position": 76.9
+  },
+  {
+    "query": "hire python company",
+    "clicks": 0,
+    "impressions": 63,
+    "ctr": 0,
+    "position": 14.1
+  },
+  {
+    "query": "who hires python programmers",
+    "clicks": 0,
+    "impressions": 63,
+    "ctr": 0,
     "position": 7.0
   },
   {
     "query": "best sites to hire python developers",
     "clicks": 0,
-    "impressions": 63,
+    "impressions": 62,
     "ctr": 0,
-    "position": 8.6
+    "position": 8.0
   },
   {
     "query": "hire jupyter developers",
     "clicks": 0,
-    "impressions": 63,
-    "ctr": 0,
-    "position": 19.8
-  },
-  {
-    "query": "hire python",
-    "clicks": 0,
-    "impressions": 63,
-    "ctr": 0,
-    "position": 11.4
-  },
-  {
-    "query": "hire python and react js developers",
-    "clicks": 0,
-    "impressions": 61,
-    "ctr": 0,
-    "position": 41.9
-  },
-  {
-    "query": "hire scipy developers",
-    "clicks": 0,
-    "impressions": 61,
-    "ctr": 0,
-    "position": 61.7
-  },
-  {
-    "query": "hire python company",
-    "clicks": 0,
     "impressions": 60,
     "ctr": 0,
-    "position": 13.4
-  },
-  {
-    "query": "hire jython developer",
-    "clicks": 0,
-    "impressions": 58,
-    "ctr": 0,
-    "position": 11.2
+    "position": 20.4
   },
   {
     "query": "hire pyobjc developers",
     "clicks": 0,
     "impressions": 58,
     "ctr": 0,
-    "position": 9.2
+    "position": 9.6
+  },
+  {
+    "query": "hire python and react js developers",
+    "clicks": 0,
+    "impressions": 58,
+    "ctr": 0,
+    "position": 43.9
+  },
+  {
+    "query": "hire jython developer",
+    "clicks": 0,
+    "impressions": 55,
+    "ctr": 0,
+    "position": 11.5
+  },
+  {
+    "query": "hire python",
+    "clicks": 0,
+    "impressions": 55,
+    "ctr": 0,
+    "position": 10.1
+  },
+  {
+    "query": "hire scipy developers",
+    "clicks": 0,
+    "impressions": 54,
+    "ctr": 0,
+    "position": 60.7
   },
   {
     "query": "find python programmers",
     "clicks": 0,
-    "impressions": 57,
+    "impressions": 53,
     "ctr": 0,
-    "position": 7.5
-  },
-  {
-    "query": "hire python software development",
-    "clicks": 0,
-    "impressions": 52,
-    "ctr": 0,
-    "position": 6.3
-  },
-  {
-    "query": "hire python contractor",
-    "clicks": 0,
-    "impressions": 51,
-    "ctr": 0,
-    "position": 14.8
-  },
-  {
-    "query": "hire python engineers",
-    "clicks": 0,
-    "impressions": 50,
-    "ctr": 0,
-    "position": 9.9
-  },
-  {
-    "query": "hire backend python developer",
-    "clicks": 0,
-    "impressions": 49,
-    "ctr": 0,
-    "position": 4.5
+    "position": 7.7
   },
   {
     "query": "where to hire python developers",
     "clicks": 0,
-    "impressions": 49,
+    "impressions": 52,
     "ctr": 0,
-    "position": 5.7
+    "position": 4.5
   },
   {
-    "query": "hire top python developer",
+    "query": "hire python contractor",
     "clicks": 0,
-    "impressions": 48,
+    "impressions": 50,
     "ctr": 0,
-    "position": 6.9
+    "position": 16.7
   },
   {
-    "query": "python for hire",
+    "query": "hire python software development",
     "clicks": 0,
-    "impressions": 48,
+    "impressions": 50,
     "ctr": 0,
-    "position": 11.1
+    "position": 6.4
   },
   {
     "query": "hire python consultant",
     "clicks": 0,
-    "impressions": 47,
+    "impressions": 49,
     "ctr": 0,
-    "position": 8.4
+    "position": 10.9
   },
   {
-    "query": "hire python developers in usa",
-    "clicks": 0,
-    "impressions": 47,
-    "ctr": 0,
-    "position": 11.1
-  },
-  {
-    "query": "dedicated python developers",
+    "query": "hire backend python developer",
     "clicks": 0,
     "impressions": 46,
     "ctr": 0,
-    "position": 30.8
+    "position": 4.8
+  },
+  {
+    "query": "hire fullstack python developers",
+    "clicks": 0,
+    "impressions": 46,
+    "ctr": 0,
+    "position": 12.8
+  },
+  {
+    "query": "hire python 3x developers",
+    "clicks": 0,
+    "impressions": 46,
+    "ctr": 0,
+    "position": 23.5
+  },
+  {
+    "query": "python for hire",
+    "clicks": 0,
+    "impressions": 46,
+    "ctr": 0,
+    "position": 11.8
   },
   {
     "query": "hire python developer in usa",
     "clicks": 0,
-    "impressions": 46,
+    "impressions": 45,
     "ctr": 0,
-    "position": 4.7
+    "position": 4.5
   },
   {
-    "query": "find python programmer",
+    "query": "hire top python developer",
     "clicks": 0,
     "impressions": 45,
     "ctr": 0,
-    "position": 7.9
+    "position": 7.5
   },
   {
     "query": "sites to hire python developers",
@@ -539,669 +525,676 @@
     "position": 7.0
   },
   {
-    "query": "hire fullstack python developers",
-    "clicks": 1,
+    "query": "hire python engineers",
+    "clicks": 0,
     "impressions": 44,
-    "ctr": 0.0227,
-    "position": 10.6
+    "ctr": 0,
+    "position": 11.2
+  },
+  {
+    "query": "dedicated python developers",
+    "clicks": 0,
+    "impressions": 43,
+    "ctr": 0,
+    "position": 30.4
   },
   {
     "query": "dedicated python developers for hire",
     "clicks": 0,
-    "impressions": 44,
+    "impressions": 43,
     "ctr": 0,
     "position": 4.0
   },
   {
-    "query": "hire python 3x developers",
-    "clicks": 0,
-    "impressions": 44,
-    "ctr": 0,
-    "position": 27.0
-  },
-  {
-    "query": "how to hire python developer",
+    "query": "find python programmer",
     "clicks": 0,
     "impressions": 43,
-    "ctr": 0,
-    "position": 9.3
-  },
-  {
-    "query": "hire experienced python engineer",
-    "clicks": 0,
-    "impressions": 42,
-    "ctr": 0,
-    "position": 7.9
-  },
-  {
-    "query": "hire java python expert",
-    "clicks": 0,
-    "impressions": 42,
     "ctr": 0,
     "position": 10.1
   },
   {
-    "query": "hire pytest developers",
+    "query": "hire highly skilled python developers",
     "clicks": 0,
-    "impressions": 42,
-    "ctr": 0,
-    "position": 59.0
-  },
-  {
-    "query": "hire python development experts",
-    "clicks": 0,
-    "impressions": 42,
+    "impressions": 43,
     "ctr": 0,
     "position": 13.6
   },
   {
-    "query": "hire remote cython developers",
+    "query": "hire python developers in usa",
     "clicks": 0,
-    "impressions": 42,
+    "impressions": 41,
     "ctr": 0,
-    "position": 11.5
+    "position": 16.2
   },
   {
     "query": "hire python application development",
     "clicks": 0,
-    "impressions": 41,
+    "impressions": 40,
     "ctr": 0,
-    "position": 7.5
+    "position": 7.6
+  },
+  {
+    "query": "how to hire python developer",
+    "clicks": 0,
+    "impressions": 40,
+    "ctr": 0,
+    "position": 9.4
   },
   {
     "query": "python developers to hire",
     "clicks": 0,
-    "impressions": 41,
-    "ctr": 0,
-    "position": 5.9
-  },
-  {
-    "query": "hire java python developers",
-    "clicks": 0,
     "impressions": 40,
     "ctr": 0,
-    "position": 8.0
+    "position": 6.0
   },
   {
-    "query": "hire python c# expert",
+    "query": "hire experienced python engineer",
     "clicks": 0,
-    "impressions": 40,
+    "impressions": 39,
     "ctr": 0,
-    "position": 12.8
+    "position": 8.7
   },
   {
-    "query": "python experts for hire",
+    "query": "hire python development experts",
     "clicks": 0,
-    "impressions": 40,
+    "impressions": 39,
     "ctr": 0,
-    "position": 6.8
+    "position": 14.5
   },
   {
     "query": "hire cython developer",
     "clicks": 0,
-    "impressions": 39,
+    "impressions": 38,
     "ctr": 0,
-    "position": 6.2
+    "position": 6.9
   },
   {
-    "query": "hire highly skilled python developers",
+    "query": "hire remote cython developers",
     "clicks": 0,
     "impressions": 38,
     "ctr": 0,
-    "position": 15.1
+    "position": 11.4
+  },
+  {
+    "query": "python experts for hire",
+    "clicks": 0,
+    "impressions": 38,
+    "ctr": 0,
+    "position": 6.6
+  },
+  {
+    "query": "hire java python expert",
+    "clicks": 0,
+    "impressions": 37,
+    "ctr": 0,
+    "position": 12.2
+  },
+  {
+    "query": "hire python c# expert",
+    "clicks": 0,
+    "impressions": 37,
+    "ctr": 0,
+    "position": 14.8
+  },
+  {
+    "query": "hire python freelancer",
+    "clicks": 0,
+    "impressions": 37,
+    "ctr": 0,
+    "position": 9.7
+  },
+  {
+    "query": "hire pytest developers",
+    "clicks": 0,
+    "impressions": 36,
+    "ctr": 0,
+    "position": 59.2
   },
   {
     "query": "hire remote java python developers",
     "clicks": 0,
-    "impressions": 37,
-    "ctr": 0,
-    "position": 4.5
-  },
-  {
-    "query": "python coder for hire",
-    "clicks": 1,
     "impressions": 36,
-    "ctr": 0.0278,
-    "position": 8.3
+    "ctr": 0,
+    "position": 5.7
   },
   {
     "query": "find a python developer",
     "clicks": 0,
-    "impressions": 36,
+    "impressions": 35,
     "ctr": 0,
-    "position": 5.6
+    "position": 5.9
   },
   {
-    "query": "hire best python developer",
+    "query": "hire freelance python developers",
     "clicks": 0,
     "impressions": 35,
     "ctr": 0,
-    "position": 7.4
-  },
-  {
-    "query": "hire python agency",
-    "clicks": 0,
-    "impressions": 35,
-    "ctr": 0,
-    "position": 18.8
+    "position": 7.5
   },
   {
     "query": "hire python app developers",
     "clicks": 0,
     "impressions": 35,
     "ctr": 0,
-    "position": 19.1
+    "position": 21.5
   },
   {
-    "query": "hire python developer online",
-    "clicks": 0,
-    "impressions": 35,
-    "ctr": 0,
-    "position": 4.4
+    "query": "python coder for hire",
+    "clicks": 1,
+    "impressions": 34,
+    "ctr": 0.0294,
+    "position": 6.5
   },
   {
-    "query": "hire python freelancer",
-    "clicks": 0,
-    "impressions": 35,
-    "ctr": 0,
-    "position": 9
-  },
-  {
-    "query": "hie python developers",
+    "query": "hire java python developers",
     "clicks": 0,
     "impressions": 34,
     "ctr": 0,
-    "position": 9.9
-  },
-  {
-    "query": "hire python app developer",
-    "clicks": 0,
-    "impressions": 34,
-    "ctr": 0,
-    "position": 7.7
-  },
-  {
-    "query": "hire freelance python developers",
-    "clicks": 0,
-    "impressions": 33,
-    "ctr": 0,
-    "position": 8.5
-  },
-  {
-    "query": "hire haml developers",
-    "clicks": 0,
-    "impressions": 33,
-    "ctr": 0,
-    "position": 58.3
+    "position": 9.4
   },
   {
     "query": "hire python developers usa",
     "clicks": 0,
     "impressions": 33,
     "ctr": 0,
-    "position": 4.3
+    "position": 4.2
+  },
+  {
+    "query": "where to hire python developers?",
+    "clicks": 0,
+    "impressions": 33,
+    "ctr": 0,
+    "position": 2.9
+  },
+  {
+    "query": "hie python developers",
+    "clicks": 0,
+    "impressions": 31,
+    "ctr": 0,
+    "position": 10.0
+  },
+  {
+    "query": "hire python app developer",
+    "clicks": 0,
+    "impressions": 31,
+    "ctr": 0,
+    "position": 8.3
+  },
+  {
+    "query": "hire python developer online",
+    "clicks": 0,
+    "impressions": 31,
+    "ctr": 0,
+    "position": 4.6
   },
   {
     "query": "hire python software house",
     "clicks": 0,
-    "impressions": 33,
+    "impressions": 31,
     "ctr": 0,
-    "position": 22.8
-  },
-  {
-    "query": "hire sqlalchemy developers",
-    "clicks": 0,
-    "impressions": 32,
-    "ctr": 0,
-    "position": 60.0
+    "position": 23.7
   },
   {
     "query": "hire the best python developer",
     "clicks": 0,
-    "impressions": 32,
-    "ctr": 0,
-    "position": 9.5
-  },
-  {
-    "query": "hire python developer freelancers",
-    "clicks": 0,
-    "impressions": 31,
-    "ctr": 0,
-    "position": 10.6
-  },
-  {
-    "query": "hire python expert coders",
-    "clicks": 0,
-    "impressions": 31,
-    "ctr": 0,
-    "position": 6.9
-  },
-  {
-    "query": "hire experienced python developer",
-    "clicks": 0,
     "impressions": 30,
     "ctr": 0,
-    "position": 5.2
-  },
-  {
-    "query": "hire full-stack python developers",
-    "clicks": 0,
-    "impressions": 30,
-    "ctr": 0,
-    "position": 33.7
-  },
-  {
-    "query": "hire python web developer",
-    "clicks": 0,
-    "impressions": 30,
-    "ctr": 0,
-    "position": 6.3
-  },
-  {
-    "query": "who hire python programmers",
-    "clicks": 0,
-    "impressions": 30,
-    "ctr": 0,
-    "position": 6.8
+    "position": 9.2
   },
   {
     "query": "hire a python developers",
     "clicks": 0,
     "impressions": 29,
     "ctr": 0,
-    "position": 6.5
-  },
-  {
-    "query": "hire a python full stack developer",
-    "clicks": 0,
-    "impressions": 29,
-    "ctr": 0,
     "position": 6.4
   },
   {
-    "query": "hire matplotlib developer",
+    "query": "hire full-stack python developers",
     "clicks": 0,
     "impressions": 29,
     "ctr": 0,
-    "position": 72.1
+    "position": 41.4
   },
   {
-    "query": "hire micropython developers",
+    "query": "hire python agency",
     "clicks": 0,
     "impressions": 29,
     "ctr": 0,
-    "position": 7.5
+    "position": 20.2
   },
   {
-    "query": "best places to find and hire python developers",
+    "query": "hire sqlalchemy developers",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 29,
     "ctr": 0,
-    "position": 9.6
-  },
-  {
-    "query": "best python developers for hire",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 7.2
-  },
-  {
-    "query": "hire a python ai developer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 8.1
+    "position": 68.4
   },
   {
     "query": "hire a python api developer",
     "clicks": 0,
     "impressions": 28,
     "ctr": 0,
-    "position": 6.9
+    "position": 6.8
   },
   {
-    "query": "hire a python backend developer",
+    "query": "hire experienced python developer",
     "clicks": 0,
     "impressions": 28,
     "ctr": 0,
-    "position": 6.5
-  },
-  {
-    "query": "hire a python game developer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 6.1
-  },
-  {
-    "query": "hire a python web developer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 6
-  },
-  {
-    "query": "hire dedicated python engineers",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 25.9
-  },
-  {
-    "query": "hire freelance python engineer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 6.9
-  },
-  {
-    "query": "hire jython developers",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 14.8
+    "position": 5
   },
   {
     "query": "hire pyinstaller developers",
     "clicks": 0,
     "impressions": 28,
     "ctr": 0,
-    "position": 3.3
-  },
-  {
-    "query": "hire pytest developer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 46.4
-  },
-  {
-    "query": "hire python application developer",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 4.7
+    "position": 2.8
   },
   {
     "query": "hire python developers united states",
     "clicks": 0,
     "impressions": 28,
     "ctr": 0,
-    "position": 4.5
+    "position": 4.3
   },
   {
-    "query": "hire python developers us",
+    "query": "hire python expert coders",
     "clicks": 0,
     "impressions": 28,
     "ctr": 0,
-    "position": 5.2
+    "position": 7.3
   },
   {
-    "query": "hire python programmers.",
+    "query": "hire a python full stack developer",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 27,
     "ctr": 0,
-    "position": 10.2
+    "position": 6.1
   },
   {
     "query": "hire+python+developers",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 27,
     "ctr": 0,
-    "position": 14.6
+    "position": 15.0
+  },
+  {
+    "query": "who hire python programmers",
+    "clicks": 0,
+    "impressions": 27,
+    "ctr": 0,
+    "position": 7.4
+  },
+  {
+    "query": "best python developers for hire",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 7.8
+  },
+  {
+    "query": "hire a python ai developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 8.7
+  },
+  {
+    "query": "hire a python backend developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 6.8
+  },
+  {
+    "query": "hire a python game developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 6
+  },
+  {
+    "query": "hire a python web developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 6.1
+  },
+  {
+    "query": "hire best python developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 7.5
+  },
+  {
+    "query": "hire freelance python engineer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 7.3
+  },
+  {
+    "query": "hire python application developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 4.7
+  },
+  {
+    "query": "hire python developers us",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 5
+  },
+  {
+    "query": "hire python programmers.",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 9.7
+  },
+  {
+    "query": "hire python web developer",
+    "clicks": 0,
+    "impressions": 26,
+    "ctr": 0,
+    "position": 6.8
   },
   {
     "query": "looking to hire a python developer",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 26,
     "ctr": 0,
     "position": 7.1
   },
   {
     "query": "looking to hire python developer",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 26,
     "ctr": 0,
-    "position": 6.6
-  },
-  {
-    "query": "python developers near me",
-    "clicks": 0,
-    "impressions": 28,
-    "ctr": 0,
-    "position": 4.8
+    "position": 6.3
   },
   {
     "query": "top python developers for hire",
     "clicks": 0,
-    "impressions": 28,
+    "impressions": 26,
     "ctr": 0,
-    "position": 7.0
+    "position": 7.6
+  },
+  {
+    "query": "hire dedicated python engineers",
+    "clicks": 0,
+    "impressions": 25,
+    "ctr": 0,
+    "position": 23.6
   },
   {
     "query": "hire experienced python programmer",
     "clicks": 0,
-    "impressions": 27,
+    "impressions": 25,
     "ctr": 0,
-    "position": 6.2
+    "position": 6.4
   },
   {
-    "query": "where to hire python developers?",
-    "clicks": 0,
-    "impressions": 27,
-    "ctr": 0,
-    "position": 3.3
-  },
-  {
-    "query": "hire a top python developer",
-    "clicks": 0,
-    "impressions": 26,
-    "ctr": 0,
-    "position": 11.2
-  },
-  {
-    "query": "websites to hire python developers",
+    "query": "hire jython developers",
     "clicks": 0,
     "impressions": 25,
     "ctr": 0,
-    "position": 7.6
+    "position": 14.0
   },
   {
-    "query": "hire jython expert",
+    "query": "hire matplotlib developer",
     "clicks": 0,
-    "impressions": 22,
+    "impressions": 25,
     "ctr": 0,
-    "position": 13.5
+    "position": 68.8
   },
   {
-    "query": "python programmers for hire freelancing",
+    "query": "hire micropython developers",
     "clicks": 0,
-    "impressions": 22,
+    "impressions": 25,
     "ctr": 0,
-    "position": 8.3
-  },
-  {
-    "query": "hire python development services developer",
-    "clicks": 0,
-    "impressions": 20,
-    "ctr": 0,
-    "position": 35.9
+    "position": 7.3
   },
   {
     "query": "hire remote python csharp developers",
     "clicks": 0,
-    "impressions": 20,
+    "impressions": 25,
     "ctr": 0,
-    "position": 8.9
+    "position": 8.6
   },
   {
-    "query": "hire scipy developer",
+    "query": "best places to find and hire python developers",
     "clicks": 0,
-    "impressions": 20,
+    "impressions": 24,
     "ctr": 0,
-    "position": 59.8
+    "position": 9.5
   },
   {
-    "query": "hire cython expert",
+    "query": "hire a top python developer",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 23,
     "ctr": 0,
-    "position": 18.4
+    "position": 12.5
   },
   {
-    "query": "hire freelance python programmer",
+    "query": "hire python development companies",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 22,
     "ctr": 0,
     "position": 6.8
   },
   {
-    "query": "hire software developers python java",
+    "query": "hire python django developers",
     "clicks": 0,
-    "impressions": 18,
+    "impressions": 22,
     "ctr": 0,
-    "position": 9.4
+    "position": 57.4
+  },
+  {
+    "query": "python developers near me",
+    "clicks": 0,
+    "impressions": 22,
+    "ctr": 0,
+    "position": 5.0
+  },
+  {
+    "query": "websites to hire python developers",
+    "clicks": 0,
+    "impressions": 22,
+    "ctr": 0,
+    "position": 9.2
+  },
+  {
+    "query": "hire pytest developer",
+    "clicks": 0,
+    "impressions": 21,
+    "ctr": 0,
+    "position": 50.3
+  },
+  {
+    "query": "python programmers for hire freelancing",
+    "clicks": 0,
+    "impressions": 21,
+    "ctr": 0,
+    "position": 8.6
+  },
+  {
+    "query": "hire freelance python programmer",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 9.2
+  },
+  {
+    "query": "hire scipy developer",
+    "clicks": 0,
+    "impressions": 19,
+    "ctr": 0,
+    "position": 58.6
   },
   {
     "query": "hire dedicated python developers canada",
     "clicks": 0,
+    "impressions": 18,
+    "ctr": 0,
+    "position": 37.4
+  },
+  {
+    "query": "hire jython expert",
+    "clicks": 0,
+    "impressions": 18,
+    "ctr": 0,
+    "position": 13.1
+  },
+  {
+    "query": "hire python software development company",
+    "clicks": 0,
+    "impressions": 18,
+    "ctr": 0,
+    "position": 16.8
+  },
+  {
+    "query": "hire haml developers",
+    "clicks": 0,
     "impressions": 17,
     "ctr": 0,
-    "position": 38.7
+    "position": 54.1
   },
   {
-    "query": "find python expert",
+    "query": "hire python development services developer",
+    "clicks": 0,
+    "impressions": 17,
+    "ctr": 0,
+    "position": 20.6
+  },
+  {
+    "query": "hire virtualenv developers",
+    "clicks": 0,
+    "impressions": 17,
+    "ctr": 0,
+    "position": 4.8
+  },
+  {
+    "query": "dedicated python developer",
     "clicks": 0,
     "impressions": 16,
     "ctr": 0,
-    "position": 11.2
+    "position": 27.5
   },
   {
-    "query": "hire java python developer",
+    "query": "dedicated python programmers",
     "clicks": 0,
     "impressions": 16,
     "ctr": 0,
-    "position": 17.4
+    "position": 15.6
   },
   {
-    "query": "hire pyjs developer",
+    "query": "experts in python development services for hire",
     "clicks": 0,
     "impressions": 16,
     "ctr": 0,
-    "position": 2.2
+    "position": 44
   },
   {
-    "query": "hire python / c# developers",
+    "query": "hire java python engineer",
     "clicks": 0,
     "impressions": 16,
     "ctr": 0,
-    "position": 7.6
+    "position": 7.1
   },
   {
-    "query": "hire pyobjc developer",
+    "query": "hire software developers python java",
     "clicks": 0,
-    "impressions": 15,
+    "impressions": 16,
     "ctr": 0,
     "position": 9.8
   },
   {
-    "query": "hire python developers in london",
+    "query": "find python expert",
     "clicks": 0,
     "impressions": 15,
     "ctr": 0,
-    "position": 51.3
+    "position": 11.5
+  },
+  {
+    "query": "hire pyjs developer",
+    "clicks": 0,
+    "impressions": 15,
+    "ctr": 0,
+    "position": 1.8
+  },
+  {
+    "query": "hire python developer freelancers",
+    "clicks": 0,
+    "impressions": 15,
+    "ctr": 0,
+    "position": 12.7
   },
   {
     "query": "hire python engineers usa",
     "clicks": 0,
     "impressions": 15,
     "ctr": 0,
-    "position": 4.7
+    "position": 4.9
   },
   {
-    "query": "experts in python development services for hire",
+    "query": "hire python / c# developers",
     "clicks": 0,
     "impressions": 14,
     "ctr": 0,
-    "position": 47.8
-  },
-  {
-    "query": "hire haml developer",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 59.4
-  },
-  {
-    "query": "hire java / python developers",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 6.9
-  },
-  {
-    "query": "hire python developers in canada",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 2.6
-  },
-  {
-    "query": "hire python django developers",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 52.9
-  },
-  {
-    "query": "hire python software development company",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 19.1
-  },
-  {
-    "query": "hire remote python 3 developers",
-    "clicks": 0,
-    "impressions": 14,
-    "ctr": 0,
-    "position": 23
-  },
-  {
-    "query": "dedicated python programmers",
-    "clicks": 0,
-    "impressions": 13,
-    "ctr": 0,
-    "position": 15.9
-  },
-  {
-    "query": "find python engineer",
-    "clicks": 0,
-    "impressions": 13,
-    "ctr": 0,
-    "position": 7.4
-  },
-  {
-    "query": "hire java python engineer",
-    "clicks": 0,
-    "impressions": 13,
-    "ctr": 0,
-    "position": 21.6
+    "position": 8
   },
   {
     "query": "hire python c# developer",
     "clicks": 0,
+    "impressions": 14,
+    "ctr": 0,
+    "position": 5.3
+  },
+  {
+    "query": "hire java / python developers",
+    "clicks": 0,
     "impressions": 13,
     "ctr": 0,
-    "position": 4.6
+    "position": 7.6
+  },
+  {
+    "query": "hire java python developer",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 15.4
+  },
+  {
+    "query": "hire pyobjc developer",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 10.8
+  },
+  {
+    "query": "hire python developers in canada",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 3.9
+  },
+  {
+    "query": "hire remote python 3 developers",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 28.9
   },
   {
     "query": "how to find a python developer",
     "clicks": 0,
     "impressions": 13,
     "ctr": 0,
-    "position": 9.1
+    "position": 9
   },
   {
     "query": "hire cython engineer",
@@ -1211,11 +1204,25 @@
     "position": 16.3
   },
   {
-    "query": "hire python consulting",
+    "query": "hire cython expert",
     "clicks": 0,
     "impressions": 12,
     "ctr": 0,
-    "position": 38.8
+    "position": 19.4
+  },
+  {
+    "query": "hire pyqt developer",
+    "clicks": 0,
+    "impressions": 12,
+    "ctr": 0,
+    "position": 52.5
+  },
+  {
+    "query": "hire python developers in london",
+    "clicks": 0,
+    "impressions": 12,
+    "ctr": 0,
+    "position": 48.5
   },
   {
     "query": "hiring a python developer",
@@ -1225,67 +1232,25 @@
     "position": 4.6
   },
   {
-    "query": "hire jupyter developer",
+    "query": "find python engineer",
     "clicks": 0,
     "impressions": 11,
     "ctr": 0,
-    "position": 39.5
-  },
-  {
-    "query": "hire python c# engineer",
-    "clicks": 0,
-    "impressions": 11,
-    "ctr": 0,
-    "position": 5
-  },
-  {
-    "query": "hire python development companies",
-    "clicks": 0,
-    "impressions": 11,
-    "ctr": 0,
-    "position": 6.8
-  },
-  {
-    "query": "hire remote python 3x developers",
-    "clicks": 0,
-    "impressions": 11,
-    "ctr": 0,
-    "position": 41.4
-  },
-  {
-    "query": "hire virtualenv developers",
-    "clicks": 0,
-    "impressions": 11,
-    "ctr": 0,
-    "position": 5.7
-  },
-  {
-    "query": "hire best python django developer",
-    "clicks": 0,
-    "impressions": 10,
-    "ctr": 0,
-    "position": 63.2
+    "position": 7.5
   },
   {
     "query": "hire jython engineer",
     "clicks": 0,
     "impressions": 10,
     "ctr": 0,
-    "position": 15.5
+    "position": 15.2
   },
   {
-    "query": "hire python development services engineer",
+    "query": "hiring python developers",
     "clicks": 0,
     "impressions": 10,
     "ctr": 0,
-    "position": 65.5
-  },
-  {
-    "query": "how to hire remote python developers quickly for a project",
-    "clicks": 0,
-    "impressions": 10,
-    "ctr": 0,
-    "position": 1.3
+    "position": 49.2
   },
   {
     "query": "python developer hourly rate",
@@ -1295,116 +1260,158 @@
     "position": 47.6
   },
   {
-    "query": "best python and django developers for hire on a monthly contract remote",
+    "query": "python developer inhuren",
     "clicks": 0,
-    "impressions": 9,
+    "impressions": 10,
     "ctr": 0,
-    "position": 3.7
+    "position": 69.5
   },
   {
-    "query": "hire django developers with experience in python frameworks",
+    "query": "hire a dedicated team of python developers",
     "clicks": 0,
     "impressions": 9,
     "ctr": 0,
-    "position": 91
+    "position": 56.6
   },
   {
     "query": "hire full stack python engineer",
     "clicks": 0,
     "impressions": 9,
     "ctr": 0,
-    "position": 42.7
+    "position": 43.3
   },
   {
-    "query": "hire pyqt developer",
+    "query": "hire python c# engineer",
     "clicks": 0,
     "impressions": 9,
     "ctr": 0,
-    "position": 60
+    "position": 5.7
   },
   {
     "query": "hire python consultants",
     "clicks": 0,
     "impressions": 9,
     "ctr": 0,
-    "position": 7.2
+    "position": 11.8
+  },
+  {
+    "query": "hire python consulting",
+    "clicks": 0,
+    "impressions": 9,
+    "ctr": 0,
+    "position": 36.2
   },
   {
     "query": "hire python csharp developers",
     "clicks": 0,
     "impressions": 9,
     "ctr": 0,
-    "position": 11.8
+    "position": 23.7
   },
   {
-    "query": "dedicated python developer",
+    "query": "hire python development services engineer",
+    "clicks": 0,
+    "impressions": 9,
+    "ctr": 0,
+    "position": 58.7
+  },
+  {
+    "query": "hire python django developer",
+    "clicks": 0,
+    "impressions": 9,
+    "ctr": 0,
+    "position": 48.2
+  },
+  {
+    "query": "hire python django programmers",
+    "clicks": 0,
+    "impressions": 9,
+    "ctr": 0,
+    "position": 63.9
+  },
+  {
+    "query": "hire remote python 3x developers",
+    "clicks": 0,
+    "impressions": 9,
+    "ctr": 0,
+    "position": 35.3
+  },
+  {
+    "query": "hire jupyter developer",
     "clicks": 0,
     "impressions": 8,
     "ctr": 0,
-    "position": 37.8
+    "position": 32.1
   },
   {
-    "query": "hire full stack python expert",
+    "query": "hire python development firm",
     "clicks": 0,
     "impressions": 8,
     "ctr": 0,
-    "position": 66.8
+    "position": 10.5
   },
   {
-    "query": "hire python developers philippines",
+    "query": "how to hire remote python developers quickly for a project",
     "clicks": 0,
     "impressions": 8,
     "ctr": 0,
-    "position": 79.2
+    "position": 1.4
   },
   {
-    "query": "python developers hire",
-    "clicks": 0,
-    "impressions": 8,
-    "ctr": 0,
-    "position": 2.6
-  },
-  {
-    "query": "hire a dedicated team of python developers",
+    "query": "best python and django developers for hire on a monthly contract remote",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 45.4
+    "position": 4.4
+  },
+  {
+    "query": "hire best python django developer",
+    "clicks": 0,
+    "impressions": 7,
+    "ctr": 0,
+    "position": 65.1
   },
   {
     "query": "hire experts in python development services",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 84.1
+    "position": 73
   },
   {
-    "query": "hire fantom developers",
+    "query": "hire full stack python developer",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 79.7
+    "position": 19.4
   },
   {
-    "query": "hire pyqt developers",
+    "query": "hire full stack python expert",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 80.9
+    "position": 68.3
   },
   {
-    "query": "hire python and django development company",
+    "query": "hire haml developer",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 86
+    "position": 57.1
   },
   {
-    "query": "hire python django programmers",
+    "query": "hire python developers philippines",
     "clicks": 0,
     "impressions": 7,
     "ctr": 0,
-    "position": 63
+    "position": 76.6
+  },
+  {
+    "query": "hire remote python 27 developers",
+    "clicks": 0,
+    "impressions": 7,
+    "ctr": 0,
+    "position": 40.6
   },
   {
     "query": "python devs",
@@ -1414,11 +1421,11 @@
     "position": 76.9
   },
   {
-    "query": "find python freelancer",
+    "query": "best platforms to hire python developers",
     "clicks": 0,
     "impressions": 6,
     "ctr": 0,
-    "position": 24.2
+    "position": 14
   },
   {
     "query": "hire liquid developers",
@@ -1428,46 +1435,18 @@
     "position": 58.3
   },
   {
-    "query": "hire python development firm",
+    "query": "hire pyqt developers",
     "clicks": 0,
     "impressions": 6,
     "ctr": 0,
-    "position": 13.3
+    "position": 77.7
   },
   {
-    "query": "hire python django developer",
+    "query": "hire remote full stack python developers",
     "clicks": 0,
     "impressions": 6,
     "ctr": 0,
-    "position": 40.7
-  },
-  {
-    "query": "hire remote python 27 developers",
-    "clicks": 0,
-    "impressions": 6,
-    "ctr": 0,
-    "position": 40.8
-  },
-  {
-    "query": "need python developer",
-    "clicks": 0,
-    "impressions": 6,
-    "ctr": 0,
-    "position": 4.7
-  },
-  {
-    "query": "python developer hirecommercial",
-    "clicks": 0,
-    "impressions": 6,
-    "ctr": 0,
-    "position": 9.3
-  },
-  {
-    "query": "python developer inhuren",
-    "clicks": 0,
-    "impressions": 6,
-    "ctr": 0,
-    "position": 55.7
+    "position": 19.8
   },
   {
     "query": "python development experts",
@@ -1477,6 +1456,13 @@
     "position": 34.3
   },
   {
+    "query": "find python freelancer",
+    "clicks": 0,
+    "impressions": 5,
+    "ctr": 0,
+    "position": 21
+  },
+  {
     "query": "freelance websites to hire python developers",
     "clicks": 0,
     "impressions": 5,
@@ -1484,67 +1470,25 @@
     "position": 10.4
   },
   {
-    "query": "hire python consultancy",
+    "query": "hire django developers with experience in python frameworks",
     "clicks": 0,
     "impressions": 5,
     "ctr": 0,
-    "position": 18.6
+    "position": 93.6
   },
   {
-    "query": "hire sqlalchemy developer",
+    "query": "hire python/django developers",
     "clicks": 0,
     "impressions": 5,
     "ctr": 0,
-    "position": 82
+    "position": 61.2
   },
   {
-    "query": "hire xpath developer",
-    "clicks": 0,
-    "impressions": 5,
-    "ctr": 0,
-    "position": 40.8
-  },
-  {
-    "query": "hiring python developers",
-    "clicks": 0,
-    "impressions": 5,
-    "ctr": 0,
-    "position": 65.4
-  },
-  {
-    "query": "best platforms to hire python developers",
+    "query": "hire fantom developers",
     "clicks": 0,
     "impressions": 4,
     "ctr": 0,
-    "position": 13
-  },
-  {
-    "query": "find python contractor",
-    "clicks": 0,
-    "impressions": 4,
-    "ctr": 0,
-    "position": 5.5
-  },
-  {
-    "query": "hire full stack python developer",
-    "clicks": 0,
-    "impressions": 4,
-    "ctr": 0,
-    "position": 25.2
-  },
-  {
-    "query": "hire pyjs engineer",
-    "clicks": 0,
-    "impressions": 4,
-    "ctr": 0,
-    "position": 11.8
-  },
-  {
-    "query": "hire pyspark developers",
-    "clicks": 0,
-    "impressions": 4,
-    "ctr": 0,
-    "position": 52
+    "position": 53.5
   },
   {
     "query": "hire python 27 developers",
@@ -1552,6 +1496,48 @@
     "impressions": 4,
     "ctr": 0,
     "position": 23.8
+  },
+  {
+    "query": "hire python and django development company",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 84.2
+  },
+  {
+    "query": "hire python consultancy",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 20.2
+  },
+  {
+    "query": "hire python pandas developers",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 46.5
+  },
+  {
+    "query": "hire sqlalchemy developer",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 80.8
+  },
+  {
+    "query": "hire xpath developer",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 44.5
+  },
+  {
+    "query": "how to hire the best custom python developer",
+    "clicks": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 20.8
   },
   {
     "query": "python developers",
@@ -1568,6 +1554,13 @@
     "position": 1
   },
   {
+    "query": "find python contractor",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 32.3
+  },
+  {
     "query": "hire celery developers",
     "clicks": 0,
     "impressions": 3,
@@ -1575,11 +1568,39 @@
     "position": 54
   },
   {
-    "query": "hire plone developers",
+    "query": "hire dedicated django developer",
     "clicks": 0,
     "impressions": 3,
     "ctr": 0,
-    "position": 81.7
+    "position": 92.7
+  },
+  {
+    "query": "hire experts in python development service",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 45.7
+  },
+  {
+    "query": "hire fantom developer",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 28.7
+  },
+  {
+    "query": "hire freelance yaml developer",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 48
+  },
+  {
+    "query": "hire matplotlib programmer",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 70.3
   },
   {
     "query": "hire pyqt expert",
@@ -1589,11 +1610,39 @@
     "position": 91.7
   },
   {
-    "query": "hire remote full stack python developers",
+    "query": "hire yaml developers",
     "clicks": 0,
     "impressions": 3,
     "ctr": 0,
-    "position": 36
+    "position": 52
+  },
+  {
+    "query": "need python developer",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 5.7
+  },
+  {
+    "query": "python developer recruitment agencies",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 25.7
+  },
+  {
+    "query": "python developers inhuren",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 84
+  },
+  {
+    "query": "python engineers",
+    "clicks": 0,
+    "impressions": 3,
+    "ctr": 0,
+    "position": 79.7
   },
   {
     "query": "freelance python developer salary",
@@ -1610,25 +1659,39 @@
     "position": 96.5
   },
   {
-    "query": "hire experts in python development service",
+    "query": "hire dedicated django developers",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 32.5
+    "position": 85.5
   },
   {
-    "query": "hire jsp engineer",
+    "query": "hire grid developers",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 25
+    "position": 58
   },
   {
-    "query": "hire pyjs developers",
+    "query": "hire haml engineer",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 11.5
+    "position": 12
+  },
+  {
+    "query": "hire plone developers",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 82
+  },
+  {
+    "query": "hire pyjs engineer",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 11
   },
   {
     "query": "hire pyqt engineer",
@@ -1638,18 +1701,11 @@
     "position": 82
   },
   {
-    "query": "hire python pandas developers",
+    "query": "hire python developers remote",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 16
-  },
-  {
-    "query": "hire python/django developers",
-    "clicks": 0,
-    "impressions": 2,
-    "ctr": 0,
-    "position": 62
+    "position": 6
   },
   {
     "query": "hire reinforcement learning developers",
@@ -1666,6 +1722,27 @@
     "position": 87
   },
   {
+    "query": "hire remote scipy developer",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 45.5
+  },
+  {
+    "query": "hire scipy engineer",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 11.5
+  },
+  {
+    "query": "hire scipy programmer",
+    "clicks": 0,
+    "impressions": 2,
+    "ctr": 0,
+    "position": 81
+  },
+  {
     "query": "hire ubuntu developers",
     "clicks": 0,
     "impressions": 2,
@@ -1673,18 +1750,18 @@
     "position": 83
   },
   {
-    "query": "how to hire the best custom python developer",
+    "query": "hire virtualenv developer",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 11
+    "position": 4.5
   },
   {
-    "query": "python developer recruitment agencies",
+    "query": "hiring python",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 21
+    "position": 11.5
   },
   {
     "query": "python developer salary",
@@ -1694,32 +1771,18 @@
     "position": 1
   },
   {
-    "query": "python engineers",
+    "query": "python developers hire",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 83.5
+    "position": 1
   },
   {
-    "query": "python freelancer near me",
+    "query": "python freelance developer",
     "clicks": 0,
     "impressions": 2,
     "ctr": 0,
-    "position": 11.5
-  },
-  {
-    "query": "vetted game artist",
-    "clicks": 0,
-    "impressions": 2,
-    "ctr": 0,
-    "position": 72.5
-  },
-  {
-    "query": "where can i hire senior python developers experienced in ai and cloud infrastructure?",
-    "clicks": 0,
-    "impressions": 2,
-    "ctr": 0,
-    "position": 11
+    "position": 20.5
   },
   {
     "query": "automation",
@@ -1750,25 +1813,11 @@
     "position": 32
   },
   {
-    "query": "find python consultant",
+    "query": "freelance pyobjc developers",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 93
-  },
-  {
-    "query": "find python team",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 8
-  },
-  {
-    "query": "free hire python freelancer near me",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 1
+    "position": 12
   },
   {
     "query": "freelance python developer inhuren",
@@ -1778,25 +1827,18 @@
     "position": 99
   },
   {
-    "query": "hire a python developer london",
+    "query": "hire dedicated matplotlib developer",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 1
+    "position": 95
   },
   {
-    "query": "hire dedicated django developer",
+    "query": "hire dedicated pyspark developer",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 99
-  },
-  {
-    "query": "hire dedicated django developers",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 82
+    "position": 42
   },
   {
     "query": "hire dedicated python programmers",
@@ -1806,25 +1848,25 @@
     "position": 3
   },
   {
-    "query": "hire fantom developer",
+    "query": "hire freelance asyncio developer",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 35
+    "position": 84
   },
   {
-    "query": "hire grid developers",
+    "query": "hire freelance matplotlib developer",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 63
+    "position": 11
   },
   {
-    "query": "hire haml engineer",
+    "query": "hire gherkin developers",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 58
+    "position": 21
   },
   {
     "query": "hire haml expert",
@@ -1832,6 +1874,20 @@
     "impressions": 1,
     "ctr": 0,
     "position": 17
+  },
+  {
+    "query": "hire jsp engineer",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 25
+  },
+  {
+    "query": "hire jupyter engineer",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 30
   },
   {
     "query": "hire nearshore python developers",
@@ -1855,18 +1911,11 @@
     "position": 66
   },
   {
-    "query": "hire python developer for free",
+    "query": "hire pyjs developers",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 1
-  },
-  {
-    "query": "hire python developers remote",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 7
+    "position": 12
   },
   {
     "query": "hire python django development company",
@@ -1874,6 +1923,34 @@
     "impressions": 1,
     "ctr": 0,
     "position": 95
+  },
+  {
+    "query": "hire remote jupyter developers",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 24
+  },
+  {
+    "query": "hire scikit learn developers",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 69
+  },
+  {
+    "query": "hire scipy expert",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 23
+  },
+  {
+    "query": "hire web2py developers",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 30
   },
   {
     "query": "hire web2py engineer",
@@ -1895,6 +1972,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 33
+  },
+  {
+    "query": "hiring python programmers",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 64
   },
   {
     "query": "how much does it cost to hire a python developer?",
@@ -1932,13 +2016,6 @@
     "position": 96
   },
   {
-    "query": "part time python developer jobs",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 1
-  },
-  {
     "query": "python backend developers",
     "clicks": 0,
     "impressions": 1,
@@ -1946,25 +2023,11 @@
     "position": 27
   },
   {
-    "query": "python developer",
+    "query": "python developer hirecommercial",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 87
-  },
-  {
-    "query": "python developer freelancer",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 67
-  },
-  {
-    "query": "python developers inhuren",
-    "clicks": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 84
+    "position": 18
   },
   {
     "query": "python django developers near me",
@@ -1974,11 +2037,32 @@
     "position": 6
   },
   {
-    "query": "python freelancers",
+    "query": "python freelancer near me",
     "clicks": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 52
+    "position": 12
+  },
+  {
+    "query": "python hiring",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 92
+  },
+  {
+    "query": "python ontwikkelaar inhuren",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 76
+  },
+  {
+    "query": "python programmer jobs",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 13
   },
   {
     "query": "python programmeur inhuren",
@@ -2000,5 +2084,12 @@
     "impressions": 1,
     "ctr": 0,
     "position": 15
+  },
+  {
+    "query": "where can i hire senior python developers experienced in ai and cloud infrastructure?",
+    "clicks": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 11
   }
 ]
